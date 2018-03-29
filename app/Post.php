@@ -59,11 +59,15 @@ class Post extends Model
         {
           return $this->belongsTo(User::class, 'user_id');
         }
-
+// addDays(29)
         public function scopePublished($query)
         {
+          // $query->whereNotNull('published_at')
+          //       ->where('published_at', '<=', Carbon::now())
+          //       ->latest('published_at');
           $query->whereNotNull('published_at')
                 ->where('published_at', '<=', Carbon::now())
+                ->where('published_at', '>=', Carbon::now()->subDays(3))
                 ->latest('published_at');
 
         }

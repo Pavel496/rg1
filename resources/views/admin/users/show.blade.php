@@ -45,7 +45,8 @@
               <strong>{{ $post->title }}</strong>
             </a>
             <br>
-            <small class="text-muted">Published at {{ $post->published_at->format('d/m/Y') }}</small>
+            <small class="text-muted">Published at {{ optional($post->published_at)->format('M d') }}</small>
+{{-- $post->published_at->format('d/m/Y')             --}}
             <p class="text-muted">{{ $post->excerpt }}</p>
             @unless ($loop->last)
               <hr>

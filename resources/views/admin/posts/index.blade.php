@@ -38,10 +38,10 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->excerpt }}</td>
                         <td>
-                          <a href="{{ route('posts.show', $post) }}"
+                          {{-- <a href="{{ route('posts.show', $post) }}"
                             class="btn btn-xs btn-default"
                             target="_blank">
-                            <i class="fa fa-eye"></i></span></a>
+                            <i class="fa fa-eye"></i></span></a> --}}
                           <a href="{{ route('admin.posts.edit', $post) }}"
                             class="btn btn-xs btn-info">
                             <i class="fa fa-pencil"></i></span></a>
@@ -72,15 +72,11 @@
   <script>
     $(function () {
       $('#posts-table').DataTable(
-      //   {
-      //   "paging": true,
-      //   "lengthChange": false,
-      //   "searching": false,
-      //   "ordering": true,
-      //   "info": true,
-      //   "autoWidth": false
-      // }
-    );
+        { "language": {
+            "url": "http://cdn.datatables.net/plug-ins/1.10.16/i18n/Russian.json"
+          }
+        }
+      );
     });
   </script>
 

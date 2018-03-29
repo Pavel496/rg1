@@ -40,9 +40,6 @@
       {{ csrf_field() }} {{ method_field('PUT') }}
       <div class="col-md-8">
         <div class="box box-primary">
-          {{-- <div class="box-header">
-            <h3 class="box-title">Create post</h3>
-          </div> --}}
             <div class="box-body">
               <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>Title</label>
@@ -73,13 +70,10 @@
 
       <div class="col-md-4">
         <div class="box box-primary">
-          {{-- <div class="box-header">
-            <h3 class="box-title"></h3>
-          </div> --}}
           <div class="box-body">
 
             <!-- Date -->
-            <div class="form-group">
+            <div class="form-group {{ $errors->has('published_at') ? 'has-error' : '' }}">
               <label>Date of publication</label>
               <div class="input-group date">
                 <div class="input-group-addon">
@@ -91,6 +85,9 @@
                   type="text"
                   id="datepicker">
               </div>
+
+                {!! $errors->first('published_at', '<span class="help-block">:message</span>') !!}
+                
             </div>
 
             <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
