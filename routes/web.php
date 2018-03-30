@@ -5,7 +5,7 @@
 // });
 
 Route::get('/', 'PagesController@home')->name('pages.home');
-
+// ->middleware('throttle:3')
 
 Route::get('blog/{post}', 'PostsController@show')->name('posts.show');
 Route::get('categories/{category}', 'CategoriesController@show')->name('categories.show');

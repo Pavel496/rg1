@@ -14,7 +14,7 @@
 
 @section('content')
   <div class="row">
-    @if ($post->photos->count())
+    {{-- @if ($post->photos->count())
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-body">
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-    @endif
+    @endif --}}
 
     <form method="POST" action="{{ route('admin.posts.update', $post) }}">
       {{ csrf_field() }} {{ method_field('PUT') }}
@@ -48,21 +48,28 @@
                 {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
 
               </div>
+              <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
+                <label>Адрес</label>
+                <textarea name="address" class="form-control" placeholder= "Enter address of post">{{ old('address', $post->address) }}</textarea>
+
+                {!! $errors->first('address', '<span class="help-block">:message</span>') !!}
+
+              </div>
               <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
                 <label>Body</label>
-                <textarea rows="10" id="editor" name="body" class="form-control" placeholder= "Enter body of post">{{ old('body', $post->body) }}</textarea>
+                <textarea rows="7" id="editor" name="body" class="form-control" placeholder= "Enter body of post">{{ old('body', $post->body) }}</textarea>
 
                 {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
 
               </div>
 
-              <div class="form-group {{ $errors->has('iframe') ? 'has-error' : '' }}">
+              {{-- <div class="form-group {{ $errors->has('iframe') ? 'has-error' : '' }}">
                 <label>iFrame</label>
                 <textarea rows="2" id="editor" name="iframe" class="form-control" placeholder= "Enter iframe of audio or video">{{ old('iframe', $post->iframe) }}</textarea>
 
                 {!! $errors->first('iframe', '<span class="help-block">:message</span>') !!}
 
-              </div>
+              </div> --}}
 
             </div>
         </div>
@@ -72,22 +79,43 @@
         <div class="box box-primary">
           <div class="box-body">
 
+            <div class="row">
             <!-- Date -->
-            <div class="form-group {{ $errors->has('published_at') ? 'has-error' : '' }}">
-              <label>Date of publication</label>
-              <div class="input-group date">
-                <div class="input-group-addon">
-                  <i class="fa fa-calendar"></i>
-                </div>
-                <input name="published_at"
-                  class="form-control pull-right"
-                  value="{{ old('published_at', $post->published_at ? $post->published_at->format('m/d/Y') : null) }}"
-                  type="text"
-                  id="datepicker">
-              </div>
+              <div class="col-md-7">
+                <div class="form-group {{ $errors->has('published_at') ? 'has-error' : '' }}">
+                  <label>Дата публикации</label>
+                  <div class="input-group date">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <input name="published_at"
+                      class="form-control pull-right"
+                      value="{{ old('published_at', $post->published_at ? $post->published_at->format('m/d/Y') : null) }}"
+                      type="text"
+                      id="datepicker">
+                  </div>
 
-                {!! $errors->first('published_at', '<span class="help-block">:message</span>') !!}
-                
+                    {!! $errors->first('published_at', '<span class="help-block">:message</span>') !!}
+
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label>Количество дней</label>
+                  <input type="number" name="days" min="1" max="10" step="1" value="{{ old('days', $post->days) }}">
+                </div>
+              </div>
+            </div>
+            <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+              <label>Email</label>
+              <input name="email" class="form-control" value="{{ old('email', $post->email) }}" placeholder= "Enter email of post">
+              {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
+            </div>
+
+            <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}"">
+              <label>Телефон</label>
+              <input name="phone" class="form-control" value="{{ old('phone', $post->phone) }}" placeholder= "Enter phone of post">
+              {!! $errors->first('phone', '<span class="help-block">:message</span>') !!}
             </div>
 
             <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
@@ -115,7 +143,12 @@
               {!! $errors->first('tags', '<span class="help-block">:message</span>') !!}
             </div>
 
-            <div class="form-group {{ $errors->has('excerpt') ? 'has-error' : '' }}">
+            <div class="form-group">
+              <label>Зарплата</label>
+              <input name="salary" class="form-control" value="{{ old('salary', $post->salary) }}" placeholder= "Enter salary of post">
+            </div>
+
+            {{-- <div class="form-group {{ $errors->has('excerpt') ? 'has-error' : '' }}">
               <label>Excerpt</label>
               <textarea name="excerpt" class="form-control" placeholder= "Enter excerpt of post">{{ old('excerpt', $post->excerpt) }}</textarea>
 
@@ -127,7 +160,7 @@
               <div class="dropzone">
 
               </div>
-            </div>
+            </div> --}}
 
             <div class="form-group">
               <button type="submit" class="btn btn-primary btn-block">Save Publication</button>
@@ -161,26 +194,26 @@
     });
 
     CKEDITOR.replace('editor');
-    CKEDITOR.config.height = 315;
+    CKEDITOR.config.height = 185;
 
-    var myDropzone = new Dropzone('.dropzone', {
-      url: '/admin/posts/{{ $post->url }}/photos',
-      paramName: 'photo',
-      acceptedFiles: 'image/*',
-      maxFilesize: 2,
-      // maxFiles: 1,
-      headers: {
-        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-      },
-      dictDefaultMessage: 'Бросьте фото для загрузки'
-    });
-
-    myDropzone.on('error', function(file, res){
-      var msg = res.photo[0];
-      $('.dz-error-message:last > span').text(msg);
-    });
-
-    Dropzone.autoDiscover = false;
+    // var myDropzone = new Dropzone('.dropzone', {
+    //   url: '/admin/posts/{{ $post->url }}/photos',
+    //   paramName: 'photo',
+    //   acceptedFiles: 'image/*',
+    //   maxFilesize: 2,
+    //   // maxFiles: 1,
+    //   headers: {
+    //     'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    //   },
+    //   dictDefaultMessage: 'Бросьте фото для загрузки'
+    // });
+    //
+    // myDropzone.on('error', function(file, res){
+    //   var msg = res.photo[0];
+    //   $('.dz-error-message:last > span').text(msg);
+    // });
+    //
+    // Dropzone.autoDiscover = false;
 
 
   </script>
