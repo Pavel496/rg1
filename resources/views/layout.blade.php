@@ -14,11 +14,11 @@
 	@stack('styles')
 	{{-- @stack('scripts') --}}
 </head>
-<body>
+<body style="background-image:url(/img/Leather.jpg)">
 	<div class="preload"></div>
 	<header class="space-inter">
 		<div class="container container-flex space-between">
-			<figure class="logo"><img src="/img/logo.png" alt=""></figure>
+			<figure class="logo"><img src="/img/key.png" alt=""></figure>
 			<nav class="custom-wrapper" id="menu">
 				<div class="pure-menu"></div>
 				<ul class="container-flex list-unstyled">
@@ -36,7 +36,7 @@
 	<section class="footer">
 		<footer>
 			<div class="container">
-				<figure class="logo"><img src="/img/logo.png" alt=""></figure>
+				<figure class="logo"><img src="/img/key1.png" alt=""></figure>
 				<nav>
 					<ul class="container-flex space-center list-unstyled">
 						<li><a href="index.html" class="text-uppercase c-white">home</a></li>
@@ -48,7 +48,7 @@
 				<div class="divider-2"></div>
 				<p>Nunc placerat dolor at lectus hendrerit dignissim. Ut tortor sem, consectetur nec hendrerit ut, ullamcorper ac odio. Donec viverra ligula at quam tincidunt imperdiet. Nulla mattis tincidunt auctor.</p>
 				<div class="divider-2" style="width: 80%;"></div>
-				<p>© 2018 - Zendero. All Rights Reserved. Designed & Developed by <span class="c-white">Agencia De La Web</span></p>
+				<p>© 2018 - Country House Realty. All Rights Reserved. Designed & Developed by <span class="c-white">Agencia De La Web</span></p>
 				<ul class="social-media-footer list-unstyled">
 					<li><a href="#" class="fb"></a></li>
 					<li><a href="#" class="tw"></a></li>
