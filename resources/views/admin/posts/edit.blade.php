@@ -99,24 +99,28 @@
 
                 </div>
               </div>
+
               <div class="col-md-5">
                 <div class="form-group">
                   <label>Количество дней</label>
-                  <input type="number" name="days" min="1" max="10" step="1" value="{{ old('days', $post->days) }}">
+                  <input type="number" name="days" min="1" max="14" step="1" value="{{ old('days', $post->days) }}">
                 </div>
               </div>
             </div>
+
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
               <label>Email</label>
               <input name="email" class="form-control" value="{{ old('email', $post->email) }}" placeholder= "Enter email of post">
               {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
             </div>
 
-            <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}"">
+            <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
               <label>Телефон</label>
               <input name="phone" class="form-control" value="{{ old('phone', $post->phone) }}" placeholder= "Enter phone of post">
               {!! $errors->first('phone', '<span class="help-block">:message</span>') !!}
             </div>
+
+
 
             <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
               <label>Category</label>
@@ -142,6 +146,8 @@
               </select>
               {!! $errors->first('tags', '<span class="help-block">:message</span>') !!}
             </div>
+
+
 
             <div class="form-group">
               <label>Зарплата</label>

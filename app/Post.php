@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class Post extends Model
 {
         protected $fillable = [
-            'title', 'address', 'body', 'published_at', 'email', 'phone', 'category_id', 'salary', 'days', 'user_id'
+            'title', 'address', 'body', 'published_at', 'hide_at', 'email', 'phone', 'category_id', 'salary', 'days', 'user_id'
         ];
 
         // protected $guarded = [];
@@ -61,69 +61,13 @@ class Post extends Model
           return $this->belongsTo(User::class, 'user_id');
         }
 
-
-// public static function cleanUp(Builder $query) : Builder
-// {
-//
-//    return $query->where(function ($q) {
-//        $q->where('lasting_id', '1')
-//            ->where('created_at', '<', Carbon::now()->subDays(1));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '2')
-//            ->where('created_at', '<', Carbon::now()->subDays(2));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '3')
-//            ->where('created_at', '<', Carbon::now()->subDays(3));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '4')
-//            ->where('created_at', '<', Carbon::now()->subDays(4));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '5')
-//            ->where('created_at', '<', Carbon::now()->subDays(5));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '6')
-//            ->where('created_at', '<', Carbon::now()->subDays(6));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '7')
-//            ->where('created_at', '<', Carbon::now()->subDays(7));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '8')
-//            ->where('created_at', '<', Carbon::now()->subDays(8));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '9')
-//            ->where('created_at', '<', Carbon::now()->subDays(9));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '10')
-//            ->where('created_at', '<', Carbon::now()->subDays(10));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '11')
-//            ->where('created_at', '<', Carbon::now()->subDays(11));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '12')
-//            ->where('created_at', '<', Carbon::now()->subDays(12));
-//    })->orWhere(function($q) {
-//        $q->where('lasting_id', '13')
-//            ->where('created_at', '<', Carbon::now()->subDays(13));
-//    })->orWhere(function($q) {
-//         $q->where('lasting_id', '14')
-//            ->where('created_at', '<', Carbon::now()->subDays(14));
-//
-//    });
-//
-// }
-
-
         public function scopePublished($query)
         {
-          // dd($query->first()->days);
-          // $query->whereNotNull('published_at')
-          //       ->where('published_at', '<=', Carbon::now())
-          //       ->latest('published_at');
-          $query->whereNotNull('published_at')
-                ->where('published_at', '<=', Carbon::now())
-                ->where('published_at', '>=', Carbon::now()->subDays(intval($query->first()->days)))
-                ->latest('published_at');
 
+          $query->whereNotNull('published_at')
+              ->where('published_at', '<=', Carbon::now())
+              ->where('hide_at', '>=', Carbon::now())
+              ->latest('published_at');
         }
 
         public function scopeAllowed($query)

@@ -33,6 +33,7 @@ class CreatePostsTable extends Migration
           $table->unsignedInteger('days')->nullable();
 
           $table->timestamp('published_at')->nullable();
+          $table->timestamp('hide_at')->nullable();
           $table->timestamps();
 
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

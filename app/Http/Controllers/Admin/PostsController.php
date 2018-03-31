@@ -30,7 +30,7 @@ class PostsController extends Controller
     ]);
 
     $post = Post::create( $request->all() );
-// dd($post);
+
     return redirect()->route('admin.posts.edit', $post);
 
   }
@@ -50,6 +50,10 @@ class PostsController extends Controller
   public function update(Post $post, StorePostRequest $request)
   {
     $this->authorize('update', $post);
+
+    $dt = Carbon::parse($request->published_at);
+    $hide_at = $dt->addDays($request->days);
+    array_add($request, 'hide_at', $hide_at);
 
     $post->update($request->all());
 
