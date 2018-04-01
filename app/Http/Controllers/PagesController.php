@@ -12,6 +12,7 @@ class PagesController extends Controller
 
     $posts = Post::published()->paginate();
 
-    return view('welcome', compact('posts'));
+    // return view('welcome', compact('posts'));
+    return view('jobs', compact('posts'));
   }
 }
