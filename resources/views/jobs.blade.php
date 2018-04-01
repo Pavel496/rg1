@@ -7,7 +7,7 @@
     <meta name="description" content="Post a job position or create your online resume by TheJobs!">
     <meta name="keywords" content="">
 
-    <title>TheJobs - Job list</title>
+    <title>Rabota-gtn</title>
 
     <!-- Styles -->
     <link href="front/css/app.min.css" rel="stylesheet">
@@ -32,8 +32,8 @@
           <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
           <div class="logo-wrapper">
-            <a class="logo" href="index.html"><img src="front/img/logo.png" alt="logo"></a>
-            <a class="logo-alt" href="index.html"><img src="front/img/logo-alt.png" alt="logo-alt"></a>
+            <a class="logo" href="/"><img src="/front/img/logo.png" alt="logo"></a>
+            <a class="logo-alt" href="/"><img src="/front/img/logo.png" alt="logo-alt"></a>
           </div>
 
         </div>
@@ -41,58 +41,24 @@
 
         <!-- User account -->
         <div class="pull-right user-login">
-          <a class="btn btn-sm btn-primary" href="user-login.html">Login</a> or <a href="user-register.html">register</a>
+          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Login</a>
+          {{-- or <a href="user-register.html">register</a> --}}
         </div>
         <!-- END User account -->
 
         <!-- Navigation menu -->
         <ul class="nav-menu">
           <li>
-            <a href="index.html">Home</a>
-            <ul>
-              <li><a href="index.html">Version 1</a></li>
-              <li><a href="index-2.html">Version 2</a></li>
-            </ul>
+            <a class="active" href="/">Вакансии</a>
           </li>
           <li>
-            <a class="active" href="#">Position</a>
-            <ul>
-              <li><a class="active" href="job-list-1.html">Browse jobs - 1</a></li>
-              <li><a href="job-list-2.html">Browse jobs - 2</a></li>
-              <li><a href="job-list-3.html">Browse jobs - 3</a></li>
-              <li><a href="job-detail.html">Job detail</a></li>
-              <li><a href="job-add.html">Post a job</a></li>
-              <li><a href="job-manage.html">Manage jobs</a></li>
-            </ul>
+            <a href="#">Резюме</a>
           </li>
           <li>
-            <a href="#">Resume</a>
-            <ul>
-              <li><a href="resume-list.html">Browse resumes</a></li>
-              <li><a href="resume-detail.html">Resume detail</a></li>
-              <li><a href="resume-add.html">Create a resume</a></li>
-              <li><a href="resume-manage.html">Manage resumes</a></li>
-            </ul>
+            <a href="#">Организации</a>
           </li>
           <li>
-            <a href="#">Company</a>
-            <ul>
-              <li><a href="company-list.html">Browse companies</a></li>
-              <li><a href="company-detail.html">Company detail</a></li>
-              <li><a href="company-add.html">Create a company</a></li>
-              <li><a href="company-manage.html">Manage companies</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Pages</a>
-            <ul>
-              <li><a href="page-about.html">About</a></li>
-              <li><a href="page-contact.html">Contact</a></li>
-              <li><a href="page-faq.html">FAQ</a></li>
-              <li><a href="page-pricing.html">Pricing</a></li>
-              <li><a href="page-typography.html">Typography</a></li>
-              <li><a href="page-ui-elements.html">UI elements</a></li>
-            </ul>
+            <a href="#">Полезное</a>
           </li>
         </ul>
         <!-- END Navigation menu -->
@@ -105,68 +71,26 @@
     <!-- Page header -->
     <header class="page-header bg-img" style="background-image: url(front/img/bg-banner1.jpg);">
       <div class="container page-name">
-        <h1 class="text-center">Более 1000 активных вакансий у нас на сайте!</h1>
+        <h1 class="text-center">Внимание! Сайт работает в режиме отладки.</h1>
+        {{-- <h1 class="text-center">Более 1000 активных вакансий у нас на сайте!</h1> --}}
         <p class="lead text-center">Каждый день более 30 новых вакансий</p>
 
-        {{-- <form class="header-job-search">
-          <div class="input-keyword">
-            <input type="text" class="form-control" placeholder="Job title, skills, or company">
+        <div class="row">
+          <div class="col-md-12 col-md-offset-2">
+
+            <form class="header-job-search">
+              <div class="input-keyword">
+                <input type="text" class="form-control" placeholder="Просто напишите, что хотите найти">
+              </div>
+              <div class="btn-search">
+                <button class="btn btn-primary" type="submit">Найти</button>
+              </div>
+            </form>
+
           </div>
-
-          <div class="input-location">
-            <input type="text" class="form-control" placeholder="City, state or zip">
-          </div>
-
-          <div class="btn-search">
-            <button class="btn btn-primary" type="submit">Find jobs</button>
-
-          </div>
-        </form> --}}
-
-<div class="container">
-  <form action="#">
-
-    <div class="row">
-      <div class="form-group col-xs-12 col-sm-4">
-        <input type="text" class="form-control" placeholder="Keyword">
-      </div>
-
-      <div class="form-group col-xs-12 col-sm-4">
-        <input type="text" class="form-control" placeholder="Location">
-      </div>
-
-      <div class="form-group col-xs-12 col-sm-4">
-        <select class="form-control selectpicker" multiple>
-          <option selected>All categories</option>
-          <option>Developer</option>
-          <option>Designer</option>
-          <option>Customer service</option>
-          <option>Finance</option>
-          <option>Healthcare</option>
-          <option>Sale</option>
-          <option>Marketing</option>
-          <option>Information technology</option>
-          <option>Others</option>
-        </select>
-      </div>
-
-    </div>
-
-    <div class="button-group">
-      <div class="action-buttons">
-        <button class="btn btn-primary">Apply filter</button>
-      </div>
-    </div>
-
-  </form>
-
-</div>
+        </div>
 
       </div>
-
-
-      {{-- <div class="container">
-      </div> --}}
 
     </header>
     <!-- END Page header -->
@@ -214,36 +138,39 @@
             @foreach($posts as $post)
             <!-- Job item -->
             <div class="col-xs-12">
-              <a class="item-block" href="job-detail.html">
+              {{-- <span>
+                <a href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a>
+              </span> --}}
+              <a class="item-block" href="{{ route('posts.show', $post) }}">
                 <header>
-                  <img src="front/img/logo-google.jpg" alt="">
+                  <img src="/front/img/logo.png" alt="">
                   <div class="hgroup">
                     <h4>{{ $post->title }}</h4>
-                    <h5>Google <span class="label label-success">{{ $post->category->name }}</span></h5>
+                    <h5>Millenial <span class="label label-success">{{ $post->category->name }}</span></h5>
                   </div>
-                  <time datetime="2016-03-10 20:00">34 min ago</time>
+                  <time datetime="2016-03-10 20:00">{{ $post->published_at->format('d M Y') }}</time>
                 </header>
 
                 <div class="item-body">
-                  <p>A rapidly growing, well established marketing firm is looking for an experienced web developer for a full-time position. In this role, you will develop websites, apps, emails and other forms of digital electronic media, all while maintaining brand standards across design projects and other marketing communication materials.</p>
+                  <p>{{ $post->excerpt }}</p>
                 </div>
 
                 <footer>
 
                   <ul class="details cols-3">
                     <li>
-                      <i class="fa fa-map-marker"></i>
-                      <span>Menlo Park, CA</span>
+                      <i class="fa fa-phone"></i>
+                      <span>{{ $post->phone }}</span>
+                    </li>
+
+                    <li>
+                      <i class="fa fa-envelope"></i>
+                      <span>{{ $post->email }}</span>
                     </li>
 
                     <li>
                       <i class="fa fa-money"></i>
-                      <span>$90,000 - $110,000 / year</span>
-                    </li>
-
-                    <li>
-                      <i class="fa fa-certificate"></i>
-                      <span>Master or Bachelor</span>
+                      <span>{{ $post->salary }}</span>
                     </li>
                   </ul>
 
@@ -377,9 +304,9 @@
             <section class="bg-img text-center" style="background-image: url(/front/img/bg-facts.jpg)">
               <div class="container">
 
-                  <p class="text-center"><a class="btn btn-info" href="#">Добавить вакансию</a></p>
+                  <p class="text-center"><a class="btn btn-info" href="{{ route('dashboard') }}">Добавить вакансию</a></p>
                   <br>
-                  <p class="text-center"><a class="btn btn-info" href="#">Добавить резюме</a></p>
+                  <p class="text-center"><a class="btn btn-info" href="{{ route('dashboard') }}">Добавить резюме</a></p>
 
               </div>
             </section>

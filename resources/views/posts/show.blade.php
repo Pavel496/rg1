@@ -37,7 +37,7 @@
       <div class="divider"></div>
         <div id="disqus_thread"></div>
 
-          @include('partials.disqus-script')
+          {{-- @include('partials.disqus-script') --}}
 
       </div><!-- .comments -->
     </div>

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Zendero</title>
+	<title>Rabota-gtn</title>
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/framework.css">
 	<link rel="stylesheet" href="/css/style.css">
@@ -14,11 +14,11 @@
 	@stack('styles')
 	{{-- @stack('scripts') --}}
 </head>
-<body style="background-image:url(/img/Leather.jpg)">
+<body>
 	<div class="preload"></div>
 	<header class="space-inter">
 		<div class="container container-flex space-between">
-			<figure class="logo"><img src="/img/key.png" alt=""></figure>
+			<figure class="logo"><img src="/front/img/logo.png" alt=""></figure>
 			<nav class="custom-wrapper" id="menu">
 				<div class="pure-menu"></div>
 				<ul class="container-flex list-unstyled">
@@ -36,7 +36,7 @@
 	<section class="footer">
 		<footer>
 			<div class="container">
-				<figure class="logo"><img src="/img/key1.png" alt=""></figure>
+				<figure class="logo"><img src="/front/img/logo.png" alt=""></figure>
 				<nav>
 					<ul class="container-flex space-center list-unstyled">
 						<li><a href="index.html" class="text-uppercase c-white">home</a></li>

@@ -41,7 +41,7 @@
         </div>
         <div class="box-body">
           @forelse ($user->posts as $post)
-            <a href="{{ route('posts.show', $post) }}" target="_blank">
+            <a href="{{ route('admin.posts.edit', $post) }}">
               <strong>{{ $post->title }}</strong>
             </a>
             <br>

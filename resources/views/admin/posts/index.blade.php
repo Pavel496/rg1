@@ -27,6 +27,7 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Excerpt</th>
+                    <th>Категория</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
@@ -37,6 +38,7 @@
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->excerpt }}</td>
+                        <td>{{ $post->category->name }}</td>
                         <td>
                           {{-- <a href="{{ route('posts.show', $post) }}"
                             class="btn btn-xs btn-default"
