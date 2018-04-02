@@ -55,6 +55,13 @@
                 {!! $errors->first('address', '<span class="help-block">:message</span>') !!}
 
               </div>
+              <div class="form-group {{ $errors->has('excerpt') ? 'has-error' : '' }}">
+                <label>Краткое содержание</label>
+                <textarea name="excerpt" class="form-control" placeholder= "Enter excerpt of post">{{ old('excerpt', $post->excerpt) }}</textarea>
+
+                {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
+
+              </div>
               <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
                 <label>Body</label>
                 <textarea rows="7" id="editor" name="body" class="form-control" placeholder= "Enter body of post">{{ old('body', $post->body) }}</textarea>

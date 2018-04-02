@@ -26,6 +26,7 @@ class StorePostRequest extends FormRequest
         return [
           'title' => 'required',
           'address' => 'required',
+          'excerpt' => 'required',
           'body' => 'required',
           'email' => 'required',
           'phone' => 'required',

@@ -81,7 +81,7 @@
             <form class="header-job-search" method="GET" action="{{ url('my-search') }}">
             {{-- <form class="header-job-search"> --}}
               <div class="input-keyword">
-                <input type="text" name="search" class="form-control" value="{{ old('search') }}" placeholder="Просто напишите, что хотите найти">
+                <input type="text" name="search" class="form-control" placeholder="Просто напишите, что хотите найти">
               </div>
               <div class="btn-search">
                 <button class="btn btn-primary" type="submit">Найти</button>

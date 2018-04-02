@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 01 2018 г., 18:12
+-- Время создания: Апр 02 2018 г., 08:45
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -41,8 +41,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'Вакансия', 'vakansiya', '2018-04-01 06:09:16', '2018-04-01 06:09:16'),
-(2, 'Резюме', 'rezyume', '2018-04-01 06:09:16', '2018-04-01 06:09:16');
+(1, 'Вакансия', 'vakansiya', '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
+(2, 'Резюме', 'rezyume', '2018-04-02 02:45:09', '2018-04-02 02:45:09');
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ INSERT INTO `categories` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUE
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -79,7 +79,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `model_has_permissions` (
   `permission_id` int(10) UNSIGNED NOT NULL,
   `model_id` int(10) UNSIGNED NOT NULL,
-  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `model_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -91,7 +91,7 @@ CREATE TABLE `model_has_permissions` (
 CREATE TABLE `model_has_roles` (
   `role_id` int(10) UNSIGNED NOT NULL,
   `model_id` int(10) UNSIGNED NOT NULL,
-  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `model_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -109,8 +109,8 @@ INSERT INTO `model_has_roles` (`role_id`, `model_id`, `model_type`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -122,9 +122,9 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `permissions` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `display_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `guard_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -134,20 +134,20 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `display_name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'View posts', 'Просмотр публикаций', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(2, 'Create posts', 'Создание публикаций', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(3, 'Update posts', 'Обновление публикаций', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(4, 'Delete posts', 'Удаление публикаций', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(5, 'View users', 'Просмотр пользователей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(6, 'Create users', 'Создание пользователей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(7, 'Update users', 'Обновление пользователей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(8, 'Delete users', 'Удаление пользователей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(9, 'View roles', 'Просмотр ролей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(10, 'Create roles', 'Создание ролей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(11, 'Update roles', 'Обновление ролей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(12, 'Delete roles', 'Удаление ролей', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(13, 'View permissions', 'Просмотр разрешений', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(14, 'Update permissions', 'Обновление разрешений', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15');
+(1, 'View posts', 'Просмотр публикаций', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(2, 'Create posts', 'Создание публикаций', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(3, 'Update posts', 'Обновление публикаций', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(4, 'Delete posts', 'Удаление публикаций', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(5, 'View users', 'Просмотр пользователей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(6, 'Create users', 'Создание пользователей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(7, 'Update users', 'Обновление пользователей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(8, 'Delete users', 'Удаление пользователей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(9, 'View roles', 'Просмотр ролей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(10, 'Create roles', 'Создание ролей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(11, 'Update roles', 'Обновление ролей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(12, 'Delete roles', 'Удаление ролей', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(13, 'View permissions', 'Просмотр разрешений', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(14, 'Update permissions', 'Обновление разрешений', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08');
 
 -- --------------------------------------------------------
 
@@ -158,7 +158,7 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `guard_name`, `created_
 CREATE TABLE `photos` (
   `id` int(10) UNSIGNED NOT NULL,
   `post_id` int(10) UNSIGNED NOT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -171,13 +171,13 @@ CREATE TABLE `photos` (
 
 CREATE TABLE `posts` (
   `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `salary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `salary` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `excerpt` text COLLATE utf8mb4_unicode_ci,
   `iframe` mediumtext COLLATE utf8mb4_unicode_ci,
   `body` mediumtext COLLATE utf8mb4_unicode_ci,
@@ -195,11 +195,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `url`, `salary`, `address`, `photo`, `phone`, `email`, `excerpt`, `iframe`, `body`, `category_id`, `user_id`, `days`, `published_at`, `hide_at`, `created_at`, `updated_at`) VALUES
-(1, 'Публикация №1', 'publikatsiya-1', 'salary №1', 'address №1', 'photo №1', 'phone №1', 'email №1', 'Краткое содержание публикации №1', NULL, '<p>Полное содержание публикации №1</p>', 1, 1, 7, '2018-03-26 21:00:00', '2018-04-02 21:00:00', '2018-04-01 06:09:16', '2018-04-01 06:36:03'),
-(2, 'Публикация №2', 'publikatsiya-2', 'salary №2', 'address №2', 'photo №2', 'phone №2', 'email №2', 'Краткое содержание публикации №2', NULL, '<p>Полное содержание публикации №2</p>', 2, 1, 10, '2018-03-27 21:00:00', '2018-04-06 21:00:00', '2018-04-01 06:09:16', '2018-04-01 06:39:12'),
-(3, 'Публикация №3', 'publikatsiya-3', 'salary №3', 'address №3', 'photo №3', 'phone №3', 'email №3', 'Краткое содержание публикации №3', NULL, '<p>Полное содержание публикации №3</p>', 1, 1, 7, '2018-03-28 21:00:00', '2018-04-04 21:00:00', '2018-04-01 06:09:16', '2018-04-01 06:39:55'),
-(4, 'Публикация №4', 'publikatsiya-4', 'salary №4', 'address №4', 'photo №4', 'phone №4', 'email №4', 'Краткое содержание публикации №4', NULL, '<p>Полное содержание публикации №4</p>', 2, 2, 5, '2018-03-29 21:00:00', '2018-04-03 21:00:00', '2018-04-01 06:09:16', '2018-04-01 06:40:15'),
-(5, 'Публикация №5', 'publikatsiya-5', 'salary №5', 'address №5', 'photo №5', 'phone №5', 'email №5', 'Краткое содержание публикации №5', NULL, '<p>Полное содержание публикации №5</p>', 1, 2, 5, '2018-03-30 21:00:00', '2018-04-04 21:00:00', '2018-04-01 06:09:16', '2018-04-01 07:47:53');
+(1, 'Публикация №1', 'publikatsiya-1', 'salary №1', 'address №1', 'photo №1', 'phone №1', 'email №1', 'Краткое содержание публикации №1', NULL, '<p>Полное содержание публикации №1</p>', 1, 1, 5, '2018-03-28 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
+(2, 'Публикация №2', 'publikatsiya-2', 'salary №2', 'address №2', 'photo №2', 'phone №2', 'email №2', 'Краткое содержание публикации №2', NULL, '<p>Полное содержание публикации №2</p>', 2, 1, 5, '2018-03-29 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
+(3, 'Публикация №3', 'publikatsiya-3', 'salary №3', 'address №3', 'photo №3', 'phone №3', 'email №3', 'Краткое содержание публикации №3', NULL, '<p>Полное содержание публикации №3</p>', 1, 1, 5, '2018-03-30 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
+(4, 'Публикация №4', 'publikatsiya-4', 'salary №4', 'address №4', 'photo №4', 'phone №4', 'email №4', 'Краткое содержание публикации №4', NULL, '<p>Полное содержание публикации №4</p>', 2, 2, 5, '2018-03-31 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
+(5, 'Публикация №5', 'publikatsiya-5', 'salary №5', 'address №5', 'photo №5', 'phone №5', 'email №5', 'Краткое содержание публикации №5', NULL, '<p>Полное содержание публикации №5</p>', 1, 2, 5, '2018-04-01 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09');
 
 -- --------------------------------------------------------
 
@@ -213,20 +213,6 @@ CREATE TABLE `post_tag` (
   `tag_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Дамп данных таблицы `post_tag`
---
-
-INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`) VALUES
-(1, 1, 2),
-(2, 2, 1),
-(3, 2, 2),
-(4, 2, 4),
-(5, 3, 3),
-(6, 4, 1),
-(7, 4, 3),
-(8, 5, 6);
-
 -- --------------------------------------------------------
 
 --
@@ -235,9 +221,9 @@ INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`) VALUES
 
 CREATE TABLE `roles` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `display_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `guard_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -247,8 +233,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'Администратор', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(2, 'Writer', 'Писатель', 'web', '2018-04-01 06:09:15', '2018-04-01 06:09:15');
+(1, 'Admin', 'Администратор', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(2, 'Writer', 'Писатель', 'web', '2018-04-02 02:45:08', '2018-04-02 02:45:08');
 
 -- --------------------------------------------------------
 
@@ -269,8 +255,8 @@ CREATE TABLE `role_has_permissions` (
 
 CREATE TABLE `tags` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -280,30 +266,30 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'IT, интернет, телеком', 'it-internet-telekom', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(2, 'Автомобильный бизнес', 'avtomobilnyy-biznes', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(3, 'Административная работа', 'administrativnaya-rabota', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(4, 'Без опыта, студенты', 'bez-opyta-studenty', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(5, 'Бухгалтерия, финансы', 'bukhgalteriya-finansy', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(6, 'Высший менеджмент', 'vysshiy-menedzhment', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(7, 'Госслужба, НКО', 'gossluzhba-nko', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(8, 'Домашний персонал', 'domashniy-personal', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(9, 'ЖКХ, эксплуатация', 'zhkkh-ekspluatatsiya', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(10, 'Искусство, развлечения', 'iskusstvo-razvlecheniya', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(11, 'Консультирование', 'konsultirovanie', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(12, 'Маркетинг, реклама, PR', 'marketing-reklama-pr', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(13, 'Медицина, фармацевтика', 'meditsina-farmatsevtika', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(14, 'Недвижимость', 'nedvizhimost', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(15, 'Образование, наука', 'obrazovanie-nauka', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(16, 'Охрана, безопасность', 'okhrana-bezopasnost', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(17, 'Продажи', 'prodazhi', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(18, 'Производство, сырьё, с/х', 'proizvodstvo-syre-skh', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(19, 'Строительство', 'stroitelstvo', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(20, 'Транспорт, логистика', 'transport-logistika', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(21, 'Туризм, рестораны', 'turizm-restorany', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(22, 'Управление персоналом', 'upravlenie-personalom', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(23, 'Фитнес, салоны красоты', 'fitnes-salony-krasoty', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(24, 'Юриспруденция', 'yurisprudentsiya', '2018-04-01 06:09:15', '2018-04-01 06:09:15');
+(1, 'IT, интернет, телеком', 'it-internet-telekom', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(2, 'Автомобильный бизнес', 'avtomobilnyy-biznes', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(3, 'Административная работа', 'administrativnaya-rabota', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(4, 'Без опыта, студенты', 'bez-opyta-studenty', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(5, 'Бухгалтерия, финансы', 'bukhgalteriya-finansy', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(6, 'Высший менеджмент', 'vysshiy-menedzhment', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(7, 'Госслужба, НКО', 'gossluzhba-nko', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(8, 'Домашний персонал', 'domashniy-personal', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(9, 'ЖКХ, эксплуатация', 'zhkkh-ekspluatatsiya', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(10, 'Искусство, развлечения', 'iskusstvo-razvlecheniya', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(11, 'Консультирование', 'konsultirovanie', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(12, 'Маркетинг, реклама, PR', 'marketing-reklama-pr', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(13, 'Медицина, фармацевтика', 'meditsina-farmatsevtika', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(14, 'Недвижимость', 'nedvizhimost', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(15, 'Образование, наука', 'obrazovanie-nauka', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(16, 'Охрана, безопасность', 'okhrana-bezopasnost', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(17, 'Продажи', 'prodazhi', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(18, 'Производство, сырьё, с/х', 'proizvodstvo-syre-skh', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(19, 'Строительство', 'stroitelstvo', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(20, 'Транспорт, логистика', 'transport-logistika', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(21, 'Туризм, рестораны', 'turizm-restorany', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(22, 'Управление персоналом', 'upravlenie-personalom', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(23, 'Фитнес, салоны красоты', 'fitnes-salony-krasoty', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(24, 'Юриспруденция', 'yurisprudentsiya', '2018-04-02 02:45:08', '2018-04-02 02:45:08');
 
 -- --------------------------------------------------------
 
@@ -313,9 +299,9 @@ INSERT INTO `tags` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -326,8 +312,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', '$2y$10$OBuJ0A.fuaufFGI9v8EzuemDwYYDx/uuO2nu4I1KBm4sacb6FN4ya', 'I3llqg3FJzid0xFPcel05FaVhnENlk9ZUaQEoeMUZZcSKCKg8sKHHrbVRMgM', '2018-04-01 06:09:15', '2018-04-01 06:09:15'),
-(2, 'user', 'user@user.com', '$2y$10$1iv6R2BfTnKBowudNo0kguJ3TMboBN9zt09BRI8M/W2cyGZo0R5S2', 'Ugk6vtf4l4qFpoGbQoNcRfBdpjZB4U6Zl19qywj2SdD90LMLBqIiOeVbo4vi', '2018-04-01 06:09:16', '2018-04-01 06:09:16');
+(1, 'admin', 'admin@admin.com', '$2y$10$BvwLf/GCWET1HWl9OFBS6ed11gnn8kbQ8WuWiNnFQvj6wrk3iI1gq', NULL, '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(2, 'user', 'user@user.com', '$2y$10$FGAv2h9wkDf7LVpOB4A65eP981d9dX6k4xpjdeseUmn8gYTIhB4UC', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09');
 
 --
 -- Индексы сохранённых таблиц
@@ -455,7 +441,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `post_tag`
 --
 ALTER TABLE `post_tag`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `roles`
