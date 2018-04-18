@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 02 2018 г., 08:45
+-- Время создания: Апр 10 2018 г., 15:26
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -195,11 +195,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `url`, `salary`, `address`, `photo`, `phone`, `email`, `excerpt`, `iframe`, `body`, `category_id`, `user_id`, `days`, `published_at`, `hide_at`, `created_at`, `updated_at`) VALUES
-(1, 'Публикация №1', 'publikatsiya-1', 'salary №1', 'address №1', 'photo №1', 'phone №1', 'email №1', 'Краткое содержание публикации №1', NULL, '<p>Полное содержание публикации №1</p>', 1, 1, 5, '2018-03-28 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
-(2, 'Публикация №2', 'publikatsiya-2', 'salary №2', 'address №2', 'photo №2', 'phone №2', 'email №2', 'Краткое содержание публикации №2', NULL, '<p>Полное содержание публикации №2</p>', 2, 1, 5, '2018-03-29 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
-(3, 'Публикация №3', 'publikatsiya-3', 'salary №3', 'address №3', 'photo №3', 'phone №3', 'email №3', 'Краткое содержание публикации №3', NULL, '<p>Полное содержание публикации №3</p>', 1, 1, 5, '2018-03-30 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
-(4, 'Публикация №4', 'publikatsiya-4', 'salary №4', 'address №4', 'photo №4', 'phone №4', 'email №4', 'Краткое содержание публикации №4', NULL, '<p>Полное содержание публикации №4</p>', 2, 2, 5, '2018-03-31 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09'),
-(5, 'Публикация №5', 'publikatsiya-5', 'salary №5', 'address №5', 'photo №5', 'phone №5', 'email №5', 'Краткое содержание публикации №5', NULL, '<p>Полное содержание публикации №5</p>', 1, 2, 5, '2018-04-01 02:45:09', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09');
+(1, 'Публикация №1', 'publikatsiya-1', 'salary №1', 'address №1', 'photo №1', 'phone №1', 'email №1', 'Очень краткое содержание', NULL, '<p>Полное содержание публикации №1</p>', 2, 1, 10, '2018-04-01 21:00:00', '2018-04-11 21:00:00', '2018-04-02 02:45:09', '2018-04-10 09:01:48'),
+(2, 'Публикация №2', 'publikatsiya-2', 'salary №2', 'address №2', 'photo №2', 'phone №2', 'email №2', 'Краткое содержание публикации №2', NULL, '<p>Полное содержание публикации №2</p>', 2, 1, 7, '2018-03-29 21:00:00', '2018-04-05 21:00:00', '2018-04-02 02:45:09', '2018-04-02 05:54:15'),
+(3, 'Публикация №3', 'publikatsiya-3', 'salary №3', 'address №3', 'photo №3', 'phone №3', 'email №3', 'Краткое содержание публикации №3', NULL, '<p>Полное содержание публикации №3</p>', 1, 1, 5, '2018-03-29 21:00:00', '2018-04-03 21:00:00', '2018-04-02 02:45:09', '2018-04-02 03:57:50'),
+(4, 'Публикация №4', 'publikatsiya-4', 'salary №4', 'address №4', 'photo №4', 'phone №4', 'email №4', 'Краткое содержание публикации №4', NULL, '<p>Полное содержание публикации №4</p>', 2, 2, 5, '2018-03-30 21:00:00', '2018-04-04 21:00:00', '2018-04-02 02:45:09', '2018-04-02 05:38:15'),
+(5, 'Публикация №5', 'publikatsiya-5', 'salary №5', 'address №5', 'photo №5', 'phone №5', 'email №5', 'Краткое содержание публикации №5', NULL, '<p>Полное содержание публикации №5</p>', 1, 2, 5, '2018-03-31 21:00:00', '2018-04-05 21:00:00', '2018-04-02 02:45:09', '2018-04-02 08:44:47');
 
 -- --------------------------------------------------------
 
@@ -212,6 +212,17 @@ CREATE TABLE `post_tag` (
   `post_id` int(10) UNSIGNED NOT NULL,
   `tag_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `post_tag`
+--
+
+INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`) VALUES
+(2, 2, 2),
+(3, 3, 3),
+(4, 4, 4),
+(5, 5, 5),
+(6, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -312,8 +323,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', '$2y$10$BvwLf/GCWET1HWl9OFBS6ed11gnn8kbQ8WuWiNnFQvj6wrk3iI1gq', NULL, '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
-(2, 'user', 'user@user.com', '$2y$10$FGAv2h9wkDf7LVpOB4A65eP981d9dX6k4xpjdeseUmn8gYTIhB4UC', NULL, '2018-04-02 02:45:09', '2018-04-02 02:45:09');
+(1, 'admin', 'admin@admin.com', '$2y$10$BvwLf/GCWET1HWl9OFBS6ed11gnn8kbQ8WuWiNnFQvj6wrk3iI1gq', 'cV6pYhyaG33wMSvZ4CiVc2QnrKoKGgfJkrgVhWQW5Y9eQOadn3PKjhvWOGs1', '2018-04-02 02:45:08', '2018-04-02 02:45:08'),
+(2, 'user', 'user@user.com', '$2y$10$FGAv2h9wkDf7LVpOB4A65eP981d9dX6k4xpjdeseUmn8gYTIhB4UC', 'nOouHCrAfYJsPDTNnawAiOngtEUIEqYmhN1oro7CerZbVskXFvLRAcJRT9n3', '2018-04-02 02:45:09', '2018-04-02 02:45:09');
 
 --
 -- Индексы сохранённых таблиц
@@ -435,13 +446,13 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `post_tag`
 --
 ALTER TABLE `post_tag`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `roles`

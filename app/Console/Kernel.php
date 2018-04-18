@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+// use DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Post;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,8 +26,41 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+      $schedule->call(function () {
+
+      include('zadanie.php');
+      // $post = new Post;
+      //
+      // $post->title = 'title1';
+      // $post->user_id = 1;
+      //
+      // $post->save();
+      // DB::table('posts')->insert([
+      //     ['title' => 'title1', 'url' => 'title1'],
+      //     ['title' => 'title2', 'url' => 'title2']
+      // ]);
+      foreach ($collection as $item) {
+
+
+        // echo "\nЗаголовок: ".$item['title']."<br>";
+        // dd($post);
+          $haverecord = Post::where('phone', $item['phone'])->where('excerpt', $item['excerpt'])->first();
+           if (! $haverecord) {
+
+             // $post = new Post;
+             //
+             // $post->title =  $item['title'];
+             // // $post->title =  $item['title'];
+             // $post->user_id = 1;
+             // $post->generateUrl();
+             //
+             // $post->save();
+             Post::create($item);
+          }
+  }
+})->cron('*/7 * * * *');
+// ->everyMinute();
+// ->cron('*/7 * * * *');
     }
 
     /**

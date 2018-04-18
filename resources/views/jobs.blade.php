@@ -12,6 +12,7 @@
     <!-- Styles -->
     <link href="front/css/app.min.css" rel="stylesheet">
     <link href="front/css/custom.css" rel="stylesheet">
+    {{-- <link href="css/style.css" rel="stylesheet"> --}}
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
@@ -101,10 +102,10 @@
     <main>
       <section class="no-padding-top bg-alt">
         <div class="container">
-          {{-- <header class="section-header">
+          <header class="section-header">
             <span>Свежее</span>
             <h2>Новые вакансии</h2>
-          </header> --}}
+          </header>
           <div class="row">
 
             {{-- <!-- Job item -->
@@ -142,14 +143,16 @@
               {{-- <span>
                 <a href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a>
               </span> --}}
-              <a class="item-block" href="{{ route('posts.show', $post) }}">
+              {{-- <a class="item-block" href="{{ route('posts.show', $post) }}"> --}}
+              <a class="item-block">
                 <header>
-                  <img src="/front/img/logo.png" alt="">
+                  {{-- <img src="/front/img/logo.png" alt=""> --}}
                   <div class="hgroup">
                     <h4>{{ $post->title }}</h4>
-                    <h5>Millenial <span class="label label-success">{{ $post->category->name }}</span></h5>
+                    {{-- <h5>Millenial <span class="label label-success">{{ $post->category->name }}</span></h5> --}}
+                    <span class="label label-success">{{ $post->category->name }}</span>
                   </div>
-                  <time datetime="2016-03-10 20:00">{{ $post->published_at->format('d M Y') }}</time>
+                  <time>{{ optional($post->published_at)->format('d M Y') }}</time>
                 </header>
 
                 <div class="item-body">
@@ -169,10 +172,16 @@
                       <span>{{ $post->email }}</span>
                     </li>
 
-                    <li>
+                    {{-- <li>
                       <i class="fa fa-money"></i>
                       <span>{{ $post->salary }}</span>
+                    </li> --}}
+
+                    <li>
+                      <i class="fa fa-map-marker"></i>
+                      <span>{{ $post->address }}</span>
                     </li>
+
                   </ul>
 
                 </footer>
@@ -184,10 +193,16 @@
 
           </div>
 
-
           <!-- Page navigation -->
-          <nav class="text-center">
-            <ul class="pagination">
+          {{-- <nav class="text-center">
+
+            @if( method_exists($posts,'links') )
+
+     {{  $posts->links() }}
+
+
+            @endif --}}
+            {{-- <ul class="pagination">
               <li>
                 <a href="#" aria-label="Previous">
                   <i class="ti-angle-left"></i>
@@ -202,11 +217,17 @@
                   <i class="ti-angle-right"></i>
                 </a>
               </li>
-            </ul>
-          </nav>
+            </ul> --}}
+          {{-- </nav> --}}
           <!-- END Page navigation -->
 
         </div>
+
+
+
+
+
+
       </section>
 
 

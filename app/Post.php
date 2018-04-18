@@ -19,10 +19,10 @@ class Post extends Model
        protected $searchable = [
            'columns' => [
                'posts.title' => 10,
-               // 'posts.excerpt' => 10,
+               'posts.excerpt' => 10,
                // 'posts.body' => 10,
-               // 'posts.address' => 7,
-               'posts.phone' => 7,
+               'posts.address' => 10,
+               // 'posts.phone' => 7,
                // 'posts.email' => 7,
 
                //'users.email' => 5,
@@ -110,7 +110,8 @@ class Post extends Model
 
         public static function create(array $attributes = [])
         {
-          $attributes['user_id'] = auth()->id();
+          $attributes['user_id'] = 1;
+          // auth()->id();
 
           $post = static::query()->create($attributes);
 

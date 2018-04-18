@@ -27,11 +27,11 @@ class StorePostRequest extends FormRequest
           'title' => 'required',
           'address' => 'required',
           'excerpt' => 'required',
-          'body' => 'required',
+          // 'body' => 'required',
           'email' => 'required',
           'phone' => 'required',
-          'category_id' => 'required',
-          'tags' => 'required',
+          // 'category_id' => 'required',
+          // 'tags' => 'required',
 
         ];
     }
