@@ -10,8 +10,8 @@
     <title>Rabota-gtn</title>
 
     <!-- Styles -->
-    <link href="front/css/app.min.css" rel="stylesheet">
-    <link href="front/css/custom.css" rel="stylesheet">
+    <link href="/front/css/app.min.css" rel="stylesheet">
+    <link href="/front/css/custom.css" rel="stylesheet">
     {{-- <link href="css/style.css" rel="stylesheet"> --}}
 
     <!-- Fonts -->
@@ -19,7 +19,7 @@
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="front/img/favicon.ico">
+    <link rel="icon" href="/front/img/favicon.ico">
   </head>
 
   <body class="nav-on-header bg-alt">
@@ -42,8 +42,7 @@
 
         <!-- User account -->
         <div class="pull-right user-login">
-          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Login</a>
-          {{-- or <a href="user-register.html">register</a> --}}
+          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Login</a> or <a href="{{ route('register') }}">register</a>
         </div>
         <!-- END User account -->
 
@@ -70,10 +69,10 @@
 
 
     <!-- Page header -->
-    <header class="page-header bg-img" style="background-image: url(front/img/bg-banner1.jpg);">
+    <header class="page-header bg-img" style="background-image: url(/front/img/bg-banner1.jpg);">
       <div class="container page-name">
-        <h1 class="text-center">Внимание! Сайт работает в режиме отладки</h1>
-        {{-- <h1 class="text-center">Более 1000 активных вакансий у нас на сайте!</h1> --}}
+        {{-- <h1 class="text-center">Внимание! Сайт работает в режиме отладки</h1> --}}
+        <h1 class="text-center">Более 1000 активных вакансий у нас на сайте!</h1>
         <p class="lead text-center">Каждый день более 30 новых вакансий</p>
 
         <div class="row">
@@ -143,10 +142,10 @@
               {{-- <span>
                 <a href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a>
               </span> --}}
-              {{-- <a class="item-block" href="{{ route('posts.show', $post) }}"> --}}
-              <a class="item-block">
+              <a class="item-block" href="{{ route('posts.show', $post) }}">
+              {{-- <a class="item-block"> --}}
                 <header>
-                  {{-- <img src="/front/img/logo.png" alt=""> --}}
+                  {{-- <img src="//front/img/logo.png" alt=""> --}}
                   <div class="hgroup">
                     <h4>{{ $post->title }}</h4>
                     {{-- <h5>Millenial <span class="label label-success">{{ $post->category->name }}</span></h5> --}}
@@ -347,7 +346,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyrights &copy; 2018 All Rights Reserved by <a href="http://angtn.ru/">Millenial</a>.</p>
+            <p class="copyright-text">Copyrights &copy; 2018 All Rights Reserved by <a href="http:/angtn.ru/">Millenial</a>.</p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
@@ -367,8 +366,8 @@
     <!-- END Back to top button -->
 
     <!-- Scripts -->
-    <script src="front/js/app.min.js"></script>
-    <script src="front/js/custom.js"></script>
+    <script src="/front/js/app.min.js"></script>
+    <script src="/front/js/custom.js"></script>
 
   </body>
 </html>

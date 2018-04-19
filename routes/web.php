@@ -9,7 +9,7 @@ Route::get('/', 'PagesController@home')->name('pages.home');
 
 Route::get("my-search","SearchController@mySearch");
 
-Route::get('blog/{post}', 'PostsController@show')->name('posts.show');
+Route::get('baza/{post}', 'PostsController@show')->name('posts.show');
 Route::get('categories/{category}', 'CategoriesController@show')->name('categories.show');
 Route::get('tags/{tag}', 'TagsController@show')->name('tags.show');
 
@@ -43,8 +43,8 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-// Route::post('register', 'Auth\RegisterController@register');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

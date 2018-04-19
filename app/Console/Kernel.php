@@ -5,7 +5,11 @@ namespace App\Console;
 // use DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+// use Illuminate\Support\Facades\Hash;
 use App\Post;
+use App\Phone;
+
+// use Carbon\Carbon;
 
 class Kernel extends ConsoleKernel
 {
@@ -60,7 +64,29 @@ class Kernel extends ConsoleKernel
   }
 })->cron('*/7 * * * *');
 // ->everyMinute();
-// ->cron('*/7 * * * *');
+
+      $schedule->call(function () {
+          $posts = Post::all();
+          foreach ($posts as $post) {
+              $havephone = Phone::where('phone', $post->phone)->first();
+               if (! $havephone) {
+                 $phone = [];
+                 $phone = array_add($phone, 'phone', $post->phone);
+                 $phone = array_add($phone, 'registered_at', now());
+                 $code = str_random(5);
+                 $phone = array_add($phone, 'sval1', $code);
+
+                 Phone::create($phone);
+                 include('sendsms.php');
+                 $text = 'Ваша вакансия размещена на сайте Вакансии Гатчины, '
+                          . 'rabota-gtn.ru/' . $post->url . '. Ваш код доступа: '
+                          . $code;
+                 $myresult = sendsms($post->phone, $text);
+                 break;
+              }
+          }
+      })->everyFifteenMinutes();
+// everyFifteenMinutes();
     }
 
     /**
