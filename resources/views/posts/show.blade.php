@@ -42,8 +42,7 @@
 
         <!-- User account -->
         <div class="pull-right user-login">
-          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Login</a>
-          {{-- or <a href="user-register.html">register</a> --}}
+          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Вход</a> или <a href="{{ route('register') }}">Регистрация по коду смс</a>
         </div>
         <!-- END User account -->
 
@@ -73,48 +72,39 @@
     <header class="page-header bg-img size-lg" style="background-image: url(/front/img/bg-banner2.jpg)">
       <div class="container">
         <div class="header-detail">
-          <img class="logo" src="/front/img/logo-google.jpg" alt="">
+          {{-- <img class="logo" src="/front/img/logo-google.jpg" alt=""> --}}
           <div class="hgroup">
             <h1>{{ $post->title }}</h1>
-            <h3><a href="#">Google</a></h3>
+            {{-- <h3><a href="#">Google</a></h3> --}}
+            <span class="label label-success">{{ $post->category->name }}</span>
           </div>
-          <time datetime="2016-03-03 20:00">2 days ago</time>
+          {{-- <time datetime="2016-03-03 20:00">2 days ago</time> --}}
           <hr>
           <p class="lead">{{ $post->excerpt }}</p>
 
           <ul class="details cols-3">
             <li>
-              <i class="fa fa-map-marker"></i>
-              <span>Menlo Park, CA</span>
+              <i class="fa fa-phone"></i>
+              <span>{{ $post->phone }}</span>
             </li>
 
             <li>
-              <i class="fa fa-briefcase"></i>
-              <span>Full time</span>
+              <i class="fa fa-envelope"></i>
+              <span>{{ $post->email }}</span>
             </li>
 
-            <li>
+            {{-- <li>
               <i class="fa fa-money"></i>
-              <span>$90,000 - $110,000 / year</span>
-            </li>
+              <span>{{ $post->salary }}</span>
+            </li> --}}
 
             <li>
-              <i class="fa fa-clock-o"></i>
-              <span>40h / week</span>
-            </li>
-
-            <li>
-              <i class="fa fa-flask"></i>
-              <span>2+ years experience</span>
-            </li>
-
-            <li>
-              <i class="fa fa-certificate"></i>
-              <a href="#">Master or Bachelor</a>
+              <i class="fa fa-map-marker"></i>
+              <span>{{ $post->address }}</span>
             </li>
           </ul>
 
-          <div class="button-group">
+          {{-- <div class="button-group">
             <ul class="social-icons">
               <li class="title">Share on</li>
               <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -127,13 +117,12 @@
               <a class="btn btn-primary" href="#">Apply with linkedin</a>
               <a class="btn btn-success" href="#">Apply now</a>
             </div>
-          </div>
+          </div> --}}
 
         </div>
       </div>
     </header>
     <!-- END Page header -->
-
 
     <!-- Main container -->
     <main>
@@ -145,7 +134,7 @@
           <p>Google is and always will be an engineering company. We hire people with a broad set of technical skills who are ready to tackle some of technology's greatest challenges and make an impact on millions, if not billions, of users. At Google, engineers not only revolutionize search, they routinely work on massive scalability and storage solutions, large-scale applications and entirely new platforms for developers around the world. From AdWords to Chrome, Android to YouTube, Social to Local, Google engineers are changing the world one technological achievement after another.</p>
 
           <br>
-          <h4>Responsibilities</h4>
+          <h4>Обязанности</h4>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non.</p>
           <ul>
             <li>Build next-generation web applications with a focus on the client side.</li>
@@ -155,7 +144,7 @@
           </ul>
 
           <br>
-          <h4>Minimum qualifications</h4>
+          <h4>Минимальная квалификация</h4>
           <ul>
             <li>BA/BS degree in a technical field or equivalent practical experience.  </li>
             <li>2 years of relevant work experience in software development.</li>
@@ -164,7 +153,7 @@
           </ul>
 
           <br>
-          <h4>Preferred qualifications</h4>
+          <h4>Предпочтительная квалификация</h4>
           <ul>
             <li>Interest in user interface design.</li>
             <li>Web application development experience.</li>
@@ -178,6 +167,19 @@
       </section>
       <!-- END Job detail -->
 
+      <!-- Newsletter -->
+      <section class="bg-img text-center" style="background-image: url(/front/img/bg-facts.jpg)">
+        <div class="container">
+
+            <p class="text-center"><a class="btn btn-info" href="{{ route('dashboard') }}">Добавить вакансию</a></p>
+            <br>
+            <p class="text-center"><a class="btn btn-info" href="{{ route('dashboard') }}">Добавить резюме</a></p>
+
+        </div>
+      </section>
+      <!-- END Newsletter -->
+
+
     </main>
     <!-- END Main container -->
 
@@ -185,56 +187,17 @@
     <!-- Site footer -->
     <footer class="site-footer">
 
-      <!-- Top section -->
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">An employment website is a web site that deals specifically with employment or careers. Many employment websites are designed to allow employers to post job requirements for a position to be filled and are commonly known as job boards. Other employment sites offer employer reviews, career and job-search advice, and describe different job descriptions or employers. Through a job website a prospective employee can locate and fill out a job application.</p>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Company</h6>
-            <ul class="footer-links">
-              <li><a href="page-about.html">About us</a></li>
-              <li><a href="page-typography.html">How it works</a></li>
-              <li><a href="page-faq.html">Help center</a></li>
-              <li><a href="page-typography.html">Privacy policy</a></li>
-              <li><a href="page-contact.html">Contact us</a></li>
-            </ul>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Trendeing jobs</h6>
-            <ul class="footer-links">
-              <li><a href="job-list.html">Front-end developer</a></li>
-              <li><a href="job-list.html">Android developer</a></li>
-              <li><a href="job-list.html">iOS developer</a></li>
-              <li><a href="job-list.html">Full stack developer</a></li>
-              <li><a href="job-list.html">Project administrator</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <hr>
-      </div>
-      <!-- END Top section -->
-
       <!-- Bottom section -->
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a href="http://themeforest.net/user/shamsoft">ShaMSofT</a>.</p>
+            <p class="copyright-text">Copyrights &copy; 2018 All Rights Reserved by <a href="http:/angtn.ru/">Millenial</a>.</p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
+
+<!-- Yandex.Metrikainformer --><a href="https://metrika.yandex.ru/stat/?id=47092890&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47092890/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47092890" data-lang="ru" /></a><!-- /Yandex.Metrikainformer --><!-- Yandex.Metrika counter --><script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47092890 = new Ya.Metrika({ id:47092890, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script><noscript><div><imgsrc="https://mc.yandex.ru/watch/47092890" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
           </div>
         </div>
       </div>

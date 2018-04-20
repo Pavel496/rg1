@@ -5,7 +5,7 @@
     <div class="col-md-6">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Data personal</h3>
+          <h3 class="box-title">Персональные данные</h3>
         </div>
         <div class="box-body">
 
@@ -15,7 +15,7 @@
             {{ csrf_field() }} {{ method_field('PUT') }}
 
             <div class="form-group">
-              <label for="name">Name:</label>
+              <label for="name">Имя:</label>
               <input name="name" value="{{ old('name', $user->name) }}" class="form-control">
             </div>
 
@@ -25,18 +25,18 @@
             </div>
 
             <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" name="password" class="form-control" placeholder= "Password">
+              <label for="password">Пароль:</label>
+              <input type="password" name="password" class="form-control" placeholder= "Пароль">
               <span class="help-block">Оставьте незаполненным, чтобы не менять пароль</span>
             </div>
 
             <div class="form-group">
-              <label for="password_confirmation">Password confirmation:</label>
-              <input type="password" name="password_confirmation" class="form-control" placeholder= "Password confirmation">
+              <label for="password_confirmation">Подтверждение пароля:</label>
+              <input type="password" name="password_confirmation" class="form-control" placeholder= "Подтверждение пароля">
               <span class="help-block">Оставьте незаполненным, чтобы не менять пароль</span>
             </div>
 
-            <button class="btn btn-primary btn-block">Update user</button>
+            <button class="btn btn-primary btn-block">Обновить</button>
           </form>
         </div>
       </div>
@@ -46,7 +46,7 @@
     <div class="col-md-6">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Roles</h3>
+          <h3 class="box-title">Роли</h3>
         </div>
         <div class="box-body">
 
@@ -56,14 +56,14 @@
 
               @include('admin.roles.checkboxes')
 
-              <button class="btn btn-primary btn-block">Update roles</button>
+              <button class="btn btn-primary btn-block">Обновить роли</button>
           </form>
           @else
             <ul class="list-group">
               @forelse ($user->roles as $role)
                 <li class="list-group-item">{{ $role->name }}</li>
               @empty
-                <li class="list-group-item">Does not have any roles</li>
+                <li class="list-group-item">Нет ролей</li>
               @endforelse
             </ul>
           @endrole
@@ -76,7 +76,7 @@
     <div class="col-md-6">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Permissions</h3>
+          <h3 class="box-title">Разрешения</h3>
         </div>
         <div class="box-body">
 
@@ -86,14 +86,14 @@
 
               @include('admin.permissions.checkboxes', ['model' => $user])
 
-              <button class="btn btn-primary btn-block">Update permissions</button>
+              <button class="btn btn-primary btn-block">Обновить разрешения</button>
           </form>
           @else
             <ul class="list-group">
               @forelse ($user->permissions as $permission)
                 <li class="list-group-item">{{ $permission->name }}</li>
               @empty
-                <li class="list-group-item">Does not have any permissions</li>
+                <li class="list-group-item">Нет разрешений</li>
               @endforelse
             </ul>
           @endrole

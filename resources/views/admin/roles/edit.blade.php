@@ -5,7 +5,7 @@
     <div class="col-md-6">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Update role</h3>
+          <h3 class="box-title">Обновить роль</h3>
         </div>
         <div class="box-body">
 
@@ -16,7 +16,7 @@
 
             @include('admin.roles.form')
 
-            <button class="btn btn-primary btn-block">Update role</button>
+            <button class="btn btn-primary btn-block">Обновить роль</button>
           </form>
         </div>
       </div>

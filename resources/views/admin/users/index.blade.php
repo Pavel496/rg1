@@ -2,23 +2,23 @@
 
 @section('header')
   <h1>
-    USERS
-    <small>List</small>
+    ПОЛЬЗОВАТЕЛИ
+    <small>Список</small>
   </h1>
-  <ol class="breadcrumb">
-    <li><a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>
+  {{-- <ol class="breadcrumb">
+    <li><a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>--}}
     {{-- <li><a href="{{ route('admin.users.create') }}"><i class="fa fa-pencil"></i> Create user</a></li> --}}
-    <li class="active">All users</li>
-  </ol>
+  {{--   <li class="active">All users</li>
+  </ol> --}}
 @endsection
 
 @section('content')
   <div class="box box-primary">
     <div class="box-header">
-      <h3 class="box-title">List of users</h3>
+      {{-- <h3 class="box-title">Список пользователей</h3> --}}
       @can('create', $users->first())
         <a href="{{ route('admin.users.create') }}" class="btn btn-primary pull-right">
-          <i class="fa fa-plus"></i> Create user</a>
+          <i class="fa fa-plus"></i> Создать пользователя</a>
       @endcan
     </div>
     <!-- /.box-header -->
@@ -27,10 +27,10 @@
         <thead>
         <tr>
           <th>ID</th>
-          <th>Name</th>
+          <th>Имя</th>
           <th>Email</th>
-          <th>Roles</th>
-          <th>Actions</th>
+          <th>Роли</th>
+          <th>Действия</th>
         </tr>
         </thead>
 

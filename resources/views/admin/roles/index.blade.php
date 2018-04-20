@@ -2,22 +2,22 @@
 
 @section('header')
   <h1>
-    ROLES
-    <small>List</small>
+    РОЛИ
+    <small>Список</small>
   </h1>
-  <ol class="breadcrumb">
+  {{-- <ol class="breadcrumb">
     <li><a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>
     <li class="active">All roles</li>
-  </ol>
+  </ol> --}}
 @endsection
 
 @section('content')
   <div class="box box-primary">
       <div class="box-header">
-        <h3 class="box-title">List of roles</h3>
+        {{-- <h3 class="box-title">Список ролей</h3> --}}
         @can('create', $roles->first())
           <a href="{{ route('admin.roles.create') }}" class="btn btn-primary pull-right">
-            <i class="fa fa-plus"></i> Create role</a>
+            <i class="fa fa-plus"></i> Создать роль</a>
         @endcan
       </div>
       <!-- /.box-header -->
@@ -26,10 +26,10 @@
           <thead>
           <tr>
             <th>ID</th>
-            <th>Identificator</th>
-            <th>Nombre</th>
-            <th>Permissions</th>
-            <th>Actions</th>
+            <th>Идентификатор</th>
+            <th>Имя</th>
+            <th>Разрешения</th>
+            <th>Действия</th>
           </tr>
           </thead>
 
@@ -83,6 +83,10 @@
   <script>
     $(function () {
       $('#roles-table').DataTable(
+        { "language": {
+            "url": "http://cdn.datatables.net/plug-ins/1.10.16/i18n/Russian.json"
+          }
+        }
       //   {
       //   "paging": true,
       //   "lengthChange": false,

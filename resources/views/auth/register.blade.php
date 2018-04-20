@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Регистрация<br>Вы получили смс с кодом поскольку Ваши объявления обнаружены в нашей базе вакансий.<br>
+                После регистрации Вам небходимо задать период действия Ваших объявлений. С 1 мая 2018 года будут<br>публиковаться только действующие.
+                Тогда же будет возможна регистрация без кода смс.<br>Будьте внимательны при вводе кода!</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -62,7 +64,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="code" class="col-md-4 control-label">Код доступа</label>
+                            <label for="code" class="col-md-4 control-label">Код регистрации (из смс)</label>
 
                             <div class="col-md-6">
                                 <input id="code" type="text" class="form-control" name="code" required>
@@ -72,7 +74,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Регистрация
                                 </button>
                             </div>
                         </div>

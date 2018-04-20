@@ -2,19 +2,19 @@
 
 @section('header')
   <h1>
-    PERMISSIONS
-    <small>List</small>
+    РАЗРЕШЕНИЯ
+    <small>Список</small>
   </h1>
-  <ol class="breadcrumb">
+  {{-- <ol class="breadcrumb">
     <li><a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>
     <li class="active">All permissions</li>
-  </ol>
+  </ol> --}}
 @endsection
 
 @section('content')
   <div class="box box-primary">
               <div class="box-header">
-                <h3 class="box-title">List of permissions</h3>
+                {{-- <h3 class="box-title">Список разрешений</h3> --}}
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -22,10 +22,10 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Identificator</th>
-                    <th>Nombre</th>
+                    <th>Идентификатор</th>
+                    <th>Имя</th>
                     {{-- <th>Permissions</th> --}}
-                    <th>Actions</th>
+                    <th>Действия</th>
                   </tr>
                   </thead>
 
@@ -76,6 +76,10 @@
   <script>
     $(function () {
       $('#roles-table').DataTable(
+        { "language": {
+            "url": "http://cdn.datatables.net/plug-ins/1.10.16/i18n/Russian.json"
+          }
+        }
       //   {
       //   "paging": true,
       //   "lengthChange": false,

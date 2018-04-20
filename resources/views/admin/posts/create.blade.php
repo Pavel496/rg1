@@ -5,7 +5,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Create title of new publication</h4>
+            <h4 class="modal-title" id="myModalLabel">Введите заголовок новой публикации</h4>
           </div>
           <div class="modal-body">
             <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
@@ -13,13 +13,13 @@
               <input id="post-title" name="title"
               class="form-control"
               value="{{ old('title') }}"
-              placeholder= "Enter title of post" autofocus required>
+              placeholder= "Введите заголовок публикации" autofocus required>
               {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button class="btn btn-primary">Create publication</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            <button class="btn btn-primary">Создать публикацию</button>
           </div>
         </div>
       </div>

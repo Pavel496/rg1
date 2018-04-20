@@ -5,7 +5,7 @@
     <div class="col-md-6">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Create role</h3>
+          <h3 class="box-title">Создать роль</h3>
         </div>
         <div class="box-body">
 
@@ -13,7 +13,7 @@
 
           <form method="POST" action="{{ route('admin.roles.store') }}">
             @include('admin.roles.form')
-            <button class="btn btn-primary btn-block">Create role</button>
+            <button class="btn btn-primary btn-block">Создать роль</button>
           </form>
         </div>
       </div>

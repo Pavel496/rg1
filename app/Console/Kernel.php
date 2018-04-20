@@ -79,7 +79,7 @@ class Kernel extends ConsoleKernel
                  Phone::create($phone);
                  include('sendsms.php');
                  $text = 'Ваша вакансия размещена на сайте Вакансии Гатчины, '
-                          . 'rabota-gtn.ru/' . $post->url . '. Ваш код доступа: '
+                          . 'rabota-gtn.ru/' . $post->url . '. Ваш код регистрации: '
                           . $code;
                  $myresult = sendsms($post->phone, $text);
                  break;

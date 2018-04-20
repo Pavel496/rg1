@@ -5,9 +5,9 @@
     <div class="col-md-3">          <!-- Profile Image -->
       <div class="box box-primary">
         <div class="box-body box-profile">
-          <img class="profile-user-img img-responsive img-circle"
-          src="/adminlte/img/user4-128x128.jpg"
-          alt="{{ $user->name }}">
+          {{-- <img class="profile-user-img img-responsive img-circle"
+          src="/adminlte/img/voy2.jpg"
+          alt="{{ $user->name }}"> --}}
 
           <h3 class="profile-username text-center">{{ $user->name }}</h3>
 
@@ -18,16 +18,16 @@
               <b>Email</b> <a class="pull-right">{{ $user->email }}</a>
             </li>
             <li class="list-group-item">
-              <b>Publications</b> <a class="pull-right">{{ $user->posts->count() }}</a>
+              <b>Публикаций</b> <a class="pull-right">{{ $user->posts->count() }}</a>
             </li>
             @if ($user->roles->count())
             <li class="list-group-item">
-              <b>Roles</b> <a class="pull-right">{{ $user->getRoleNames()->implode(', ') }}</a>
+              <b>Роли</b> <a class="pull-right">{{ $user->getRoleNames()->implode(', ') }}</a>
             </li>
             @endif
           </ul>
 
-          <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-primary btn-block"><b>Edit</b></a>
+          <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-primary btn-block"><b>Обновить</b></a>
         </div>
         <!-- /.box-body -->
       </div>
@@ -37,7 +37,7 @@
     <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Publications</h3>
+          <h3 class="box-title">Публикации</h3>
         </div>
         <div class="box-body">
           @forelse ($user->posts as $post)
@@ -45,14 +45,14 @@
               <strong>{{ $post->title }}</strong>
             </a>
             <br>
-            <small class="text-muted">Published at {{ optional($post->published_at)->format('M d') }}</small>
+            <small class="text-muted">Дата публикации {{ optional($post->published_at)->format('M d') }}</small>
 {{-- $post->published_at->format('d/m/Y')             --}}
             <p class="text-muted">{{ $post->excerpt }}</p>
             @unless ($loop->last)
               <hr>
             @endunless
           @empty
-            <small class="text-muted">Has not any publications</small>
+            <small class="text-muted">Нет публикаций</small>
           @endforelse
         </div>
       </div>
@@ -61,7 +61,7 @@
     <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Roles</h3>
+          <h3 class="box-title">Роли</h3>
         </div>
         <div class="box-body">
           @forelse ($user->roles as $role)
@@ -69,14 +69,14 @@
             @if ($role->permissions->count())
               <br>
               <small class="text-muted">
-                Permissions: {{ $role->permissions->pluck('name')->implode(', ') }}
+                Разрешения: {{ $role->permissions->pluck('name')->implode(', ') }}
               </small>
             @endif
             @unless ($loop->last)
               <hr>
             @endunless
           @empty
-            <small class="text-muted">Has not any roles</small>
+            <small class="text-muted">Нет ролей</small>
           @endforelse
         </div>
       </div>
@@ -85,7 +85,7 @@
     <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Permissions extra</h3>
+          <h3 class="box-title">Дополнительные разрешения</h3>
         </div>
         <div class="box-body">
           @forelse ($user->permissions as $permission)
@@ -94,7 +94,7 @@
               <hr>
             @endunless
           @empty
-            <small class="text-muted">Has not any permissions</small>
+            <small class="text-muted">Нет разрешений</small>
           @endforelse
         </div>
       </div>

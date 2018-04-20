@@ -2,22 +2,22 @@
 
 @section('header')
   <h1>
-    POSTS
-    <small>List</small>
+    Публикации
+    <small>Список</small>
   </h1>
-  <ol class="breadcrumb">
+  {{-- <ol class="breadcrumb">
     <li><a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>
     <li><a href="{{ route('admin.posts.create') }}"><i class="fa fa-pencil"></i> Create post</a></li>
     <li class="active">All posts</li>
-  </ol>
+  </ol> --}}
 @endsection
 
 @section('content')
   <div class="box box-primary">
               <div class="box-header">
-                <h3 class="box-title">Data Table With Full Features</h3>
+                {{-- <h3 class="box-title">Data Table With Full Features</h3> --}}
                 <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
-                  <i class="fa fa-plus"></i> Create post</button>
+                  <i class="fa fa-plus"></i> Создать публикацию</button>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -25,10 +25,10 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Excerpt</th>
+                    <th>Заголовок</th>
+                    <th>Кратко</th>
                     <th>Категория</th>
-                    <th>Actions</th>
+                    <th>Действия</th>
                   </tr>
                   </thead>
 

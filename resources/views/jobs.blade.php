@@ -42,7 +42,7 @@
 
         <!-- User account -->
         <div class="pull-right user-login">
-          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Login</a> or <a href="{{ route('register') }}">register</a>
+          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Вход</a> или <a href="{{ route('register') }}">Регистрация по коду смс</a>
         </div>
         <!-- END User account -->
 

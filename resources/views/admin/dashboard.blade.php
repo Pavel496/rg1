@@ -13,7 +13,7 @@
 
 @section('content')
 
-  <h1>Dashboard</h1>
+  <h1>Виджеты (на реконструкции)</h1>
   <p>Пользователь: {{auth()->user()->name}}</p>
 
 @endsection

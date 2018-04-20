@@ -5,7 +5,7 @@
     <div class="col-md-6">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Data personal</h3>
+          <h3 class="box-title">Персональные данные</h3>
         </div>
         <div class="box-body">
 
@@ -15,7 +15,7 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-              <label for="name">Name:</label>
+              <label for="name">Имя:</label>
               <input name="name" value="{{ old('name') }}" class="form-control">
             </div>
 
@@ -25,18 +25,18 @@
             </div>
 
             <div class="form-group col-md-6">
-                <label>Roles</label>
+                <label>Роли</label>
                 @include('admin.roles.checkboxes')
             </div>
 
             <div class="form-group col-md-6">
-                <label>Permissions</label>
+                <label>Разрешения</label>
                 @include('admin.permissions.checkboxes', ['model' => $user])
             </div>
 
-            <span class="help-block">Пароль для нового пользователя был сгенерирован и выслан по email</span>
+            {{-- <span class="help-block">Пароль для нового пользователя был сгенерирован и выслан по email</span> --}}
 
-            <button class="btn btn-primary btn-block">Create user</button>
+            <button class="btn btn-primary btn-block">Создать пользователя</button>
           </form>
         </div>
       </div>

@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE</title>
+  <title>{{ config('app.name') }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -63,9 +63,9 @@ desired effect
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini">Gtn</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg">Rabota-Gtn</span>
     </a>
 
     <!-- Header Navbar -->
@@ -177,18 +177,18 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              {{-- <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image"> --}}
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">{{ auth()->user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                {{-- <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image"> --}}
 
                 <p>
                   {{ auth()->user()->name }} - {{ auth()->user()->getRoleDisplayNames() }}
-                  <small>Member since {{ auth()->user()->created_at->format('d/M/Y') }}</small>
+                  <small>В проекте с {{ auth()->user()->created_at->format('d/M/Y') }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -214,7 +214,7 @@ desired effect
                 <div class="pull-right"> --}}
                 <form method="POST" action="{{ route('logout') }}">
                   {{ csrf_field() }}
-                  <button href="#" class="btn btn-default btn-flat btn-block">Logout</button>
+                  <button href="#" class="btn btn-default btn-flat btn-block">Выход</button>
                 </form>
 
                 {{-- </div> --}}
@@ -297,7 +297,7 @@ desired effect
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018 <a href="#">Millenium</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

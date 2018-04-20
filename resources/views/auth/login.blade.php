@@ -27,11 +27,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="../../index2.html">Millenial</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Авторизируйтесь для начала сессии</p>
 
     <form method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
@@ -53,7 +53,7 @@
       <div class="form-group{{ $errors->has('Password') ? ' has-error' : '' }} has-feedback">
         <input type="password"
           class="form-control"
-          placeholder="Password"
+          placeholder="Пароль"
           name="password"
           required>
           @if ($errors->has('password'))
@@ -68,13 +68,13 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Запомнить Меня
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Войти</button>
         </div>
         <!-- /.col -->
       </div>
@@ -90,7 +90,7 @@
     <!-- /.social-auth-links -->
 
     {{-- <a href="{{ route('password.request') }}">I forgot my password</a><br> --}}
-    <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+    <a href="{{ route('register') }}" class="text-center">Регистрация для впервые входящих</a>
 
   </div>
   <!-- /.login-box-body -->

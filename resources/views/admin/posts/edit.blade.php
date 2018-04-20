@@ -2,14 +2,14 @@
 
 @section('header')
   <h1>
-    POSTS
-    <small>Create post</small>
+    Публикации
+    <small>Создать публикацию</small>
   </h1>
-  <ol class="breadcrumb">
+  {{-- <ol class="breadcrumb">
     <li><a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> Dashboard</a></li>
     <li><a href="{{ route('admin.posts.index') }}"><i class="fa fa-list"></i> Posts</a></li>
     <li class="active">Edit post</li>
-  </ol>
+  </ol> --}}
 @endsection
 
 @section('content')
@@ -42,29 +42,29 @@
         <div class="box box-primary">
             <div class="box-body">
               <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                <label>Title</label>
-                <input name="title" class="form-control" value="{{ old('title', $post->title) }}" placeholder= "Enter title of post">
+                <label>Зоголовок</label>
+                <input name="title" class="form-control" value="{{ old('title', $post->title) }}" placeholder= "Введите заголовок публикации">
 
                 {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
 
               </div>
               <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
                 <label>Адрес</label>
-                <textarea name="address" class="form-control" placeholder= "Enter address of post">{{ old('address', $post->address) }}</textarea>
+                <textarea name="address" class="form-control" placeholder= "Введите адрес">{{ old('address', $post->address) }}</textarea>
 
                 {!! $errors->first('address', '<span class="help-block">:message</span>') !!}
 
               </div>
               <div class="form-group {{ $errors->has('excerpt') ? 'has-error' : '' }}">
                 <label>Краткое содержание</label>
-                <textarea name="excerpt" class="form-control" placeholder= "Enter excerpt of post">{{ old('excerpt', $post->excerpt) }}</textarea>
+                <textarea name="excerpt" class="form-control" placeholder= "Введите краткое содержание">{{ old('excerpt', $post->excerpt) }}</textarea>
 
                 {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
 
               </div>
               <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
-                <label>Body</label>
-                <textarea rows="7" id="editor" name="body" class="form-control" placeholder= "Enter body of post">{{ old('body', $post->body) }}</textarea>
+                <label>Развернутое содержание</label>
+                <textarea rows="7" id="editor" name="body" class="form-control" placeholder= "Введите развернутое содержание">{{ old('body', $post->body) }}</textarea>
 
                 {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
 
@@ -117,22 +117,22 @@
 
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
               <label>Email</label>
-              <input name="email" class="form-control" value="{{ old('email', $post->email) }}" placeholder= "Enter email of post">
+              <input name="email" class="form-control" value="{{ old('email', $post->email) }}" placeholder= "Введите email">
               {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
             </div>
 
             <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
               <label>Телефон</label>
-              <input name="phone" class="form-control" value="{{ old('phone', $post->phone) }}" placeholder= "Enter phone of post">
+              <input name="phone" class="form-control" value="{{ old('phone', $post->phone) }}" placeholder= "Введите номер телефона">
               {!! $errors->first('phone', '<span class="help-block">:message</span>') !!}
             </div>
 
 
 
             <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
-              <label>Category</label>
+              <label>Категория</label>
               <select name="category_id" class="form-control select2">
-                <option value="">Select category</option>
+                <option value="">Выберите категорию</option>
                   @foreach ($categories as $category)
                     <option value="{{ $category->id }}" {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                   @endforeach
@@ -143,10 +143,10 @@
             </div>
 
             <div class="form-group {{ $errors->has('tags') ? 'has-error' : '' }}">
-              <label>Tags</label>
+              <label>Тэги</label>
               <select name="tags[]" class="form-control select2"
                       multiple="multiple"
-                      data-placeholder="Select one or more tags" style="width: 100%;">
+                      data-placeholder="Введите теги" style="width: 100%;">
                   @foreach ($tags as $tag)
                     <option {{ collect(old('tags', $post->tags->pluck('id')))->contains($tag->id) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->name }}</option>
                   @endforeach
@@ -158,7 +158,7 @@
 
             <div class="form-group">
               <label>Зарплата</label>
-              <input name="salary" class="form-control" value="{{ old('salary', $post->salary) }}" placeholder= "Enter salary of post">
+              <input name="salary" class="form-control" value="{{ old('salary', $post->salary) }}" placeholder= "Введите зарплату">
             </div>
 
             {{-- <div class="form-group {{ $errors->has('excerpt') ? 'has-error' : '' }}">
@@ -176,7 +176,7 @@
             </div> --}}
 
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">Save Publication</button>
+              <button type="submit" class="btn btn-primary btn-block">Сохранить публикацию</button>
             </div>
 
           </div>

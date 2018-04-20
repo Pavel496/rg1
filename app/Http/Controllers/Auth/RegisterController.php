@@ -64,15 +64,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-      // dd($data);
-      $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => $data['password'],
+      $phones = Phone::where('sval1', $data['code'])->first();
+      // dd($phones);
+
+      if ($phones != null) {
+
+        $user = User::create([
+              'name' => $data['name'],
+              'email' => $data['email'],
+              'password' => $data['password'],
         ])->assignRole([0 => "Writer"]);
 
         $phones = Phone::where('sval1', $data['code'])->first();
         Post::where('phone', $phones->phone)->update(['user_id' => $user->id]);
+      } else {
+        exit('Не верно введен код регистрации!!!');
+      }
 
       return $user;
     }
