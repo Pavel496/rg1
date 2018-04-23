@@ -346,7 +346,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyrights &copy; 2018 All Rights Reserved by <a href="http:/angtn.ru/">Millenial</a>.</p>
+            <p class="copyright-text">Copyrights &copy; 2018 All Rights Reserved by <a href="http://angtn.ru/">Millenial</a>.</p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">

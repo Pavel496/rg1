@@ -390,6 +390,10 @@ desired effect
   @include('admin.posts.create')
 @endunless
 
+{{-- @unless (request()->is('admin/*')) --}}
+  @include('admin.partials.sms')
+{{-- @endunless --}}
+
 @stack('scripts')
 
 <!-- AdminLTE App -->
