@@ -6,6 +6,7 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 // use Illuminate\Support\Facades\Hash;
+use Vinkla\Hashids\Facades\Hashids;
 use App\Post;
 use App\Phone;
 
@@ -75,13 +76,13 @@ class Kernel extends ConsoleKernel
                  $phone = array_add($phone, 'registered_at', now());
                  $code = str_random(5);
                  $phone = array_add($phone, 'sval1', $code);
-
+                 $hid = Hashids::encode($post->id);
+                 // $dh = Hashids::decode('Ak6');
                  Phone::create($phone);
                  include('sendsms.php');
                  $text = 'Ваша вакансия размещена на сайте Вакансии Гатчины, '
-                          . 'rabota-gtn.ru/' . $post->url . '. Ваш код регистрации: '
-                          . $code;
-                 $myresult = sendsms($post->phone, $text);
+                          . 'rabota-gtn.ru/bazahid/' . $hid;
+                 // $myresult = sendsms($post->phone, $text);
                  break;
               }
           }

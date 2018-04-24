@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Post;
+use App\Phone;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -62,10 +64,42 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => $data['password'],
-        ]);
+      $phones = Phone::where('sval1', $data['code'])->first();
+      // dd($phones);
+
+      if ($phones != null) {
+
+        $user = User::create([
+              'name' => $data['name'],
+              'email' => $data['email'],
+              'password' => $data['password'],
+        ])->assignRole([0 => "Writer"]);
+
+        $phones = Phone::where('sval1', $data['code'])->first();
+        Post::where('phone', $phones->phone)->update(['user_id' => $user->id]);
+      } else {
+        exit('Не верно введен код регистрации!!!');
+      }
+
+      return $user;
     }
 }
+// public function myregistr(Request $request, $id)
+// {$flight = App\Flight::where('active', 1)->first();
+//     if (! Gate::allows('phone_edit')) {
+//         return abort(401);
+//     }
+//
+//     $phone = Phone::findOrFail($id);
+//
+//     if ($request->input('smscode') == $phone->code) {
+//
+//         $phone->status = true;
+//         $phone->update();
+//
+//         Vacancy::where('phone_temp', $phone->phone)
+//                 ->update(['created_by_id' => $phone->created_by_id]);
+//     }
+//
+//     return redirect()->route('admin.phones.index');
+// }

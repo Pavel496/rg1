@@ -27,4 +27,20 @@ class SearchController extends Controller
 
     	return view('jobs', compact('posts'));
     }
+
+    public function sendsms(Request $request)
+    {
+ 
+      include('sendsms.php');
+      $my_phone = $request->mobil;
+      $perro = str_random(5);
+      $phone8 = '8' . $my_phone;
+      $text = 'Ваш код: ' . $perro;
+      // $myresult = sendsms($phone8, $text);
+
+    	return view('auth.register', compact('perro', 'my_phone'));
+    }
+
+
+
 }
