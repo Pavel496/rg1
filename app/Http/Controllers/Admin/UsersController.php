@@ -75,7 +75,7 @@ class UsersController extends Controller
 
         UserWasCreated::dispatch($user, $data['password']);
 
-        return redirect()->route('admin.users.index')->withFlash('User created');
+        return redirect()->route('admin.users.index')->withFlash('Пользователь успешно создан');
 
     }
 
@@ -122,7 +122,7 @@ class UsersController extends Controller
 
         $user->update($request->validated());
 
-        return redirect()->route('admin.users.edit', $user)->withFlash('User updated');
+        return redirect()->route('admin.users.edit', $user)->withFlash('Пользователь успешно обновлен');
     }
 
     /**
@@ -137,6 +137,6 @@ class UsersController extends Controller
 
         $user->delete();
 
-        return redirect()->route('admin.users.index')->withFlash('User deleted');
+        return redirect()->route('admin.users.index')->withFlash('Пользователь удален');
     }
 }

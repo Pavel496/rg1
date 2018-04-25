@@ -65,7 +65,7 @@ class RolesController extends Controller
         }
 
         return redirect()->route('admin.roles.index')
-                ->withFlash('The role created correct');
+                ->withFlash('Роль успешно создана');
     }
 
     /**
@@ -110,7 +110,7 @@ class RolesController extends Controller
       }
 
       return redirect()->route('admin.roles.edit', $role)
-              ->withFlash('The role updated correct');
+              ->withFlash('Роль успешно обновлена');
 
     }
 

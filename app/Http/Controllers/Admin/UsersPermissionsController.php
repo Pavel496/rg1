@@ -17,7 +17,7 @@ class UsersPermissionsController extends Controller
         $user->givePermissionTo($request->permissions);
       }
 
-      return back()->withFlash('Permissions updated');
+      return back()->withFlash('Разрешения обновлены');
   }
 
 }

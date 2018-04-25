@@ -17,6 +17,6 @@ class UsersRolesController extends Controller
       $user->assignRole($request->roles);
     }
 
-      return back()->withFlash('Roles updated');
+      return back()->withFlash('Роли обновлены');
   }
 }
