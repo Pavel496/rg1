@@ -86,7 +86,7 @@ class Kernel extends ConsoleKernel
                  break;
               }
           }
-      })->everyFifteenMinutes();
+      })->everyMinute();
 // everyFifteenMinutes();
     }
 

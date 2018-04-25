@@ -49,7 +49,7 @@
     <li class="{{ setActiveRoute(['admin.users.show', 'admin.users.edit']) }}">
       <a href="{{ route('admin.users.show', auth()->user()) }}">
         <i class="fa fa-user"></i> <span>Профиль</span>
-        <a href="#" data-toggle="modal" data-target="#myModalsms"><i class="fa fa-comment"></i> Запрос кода</a>
+        {{-- <a href="#" data-toggle="modal" data-target="#myModalsms"><i class="fa fa-comment"></i> Запрос кода</a> --}}
       </a>
     </li>
 

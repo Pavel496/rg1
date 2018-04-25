@@ -30,15 +30,16 @@ class SearchController extends Controller
 
     public function sendsms(Request $request)
     {
- 
+// dd($request->mobil);
       include('sendsms.php');
       $my_phone = $request->mobil;
       $perro = str_random(5);
       $phone8 = '8' . $my_phone;
-      $text = 'Ваш код: ' . $perro;
-      // $myresult = sendsms($phone8, $text);
+      $text = 'Запомните Ваш пароль: ' . $perro;
+      $myresult = sendsms($phone8, $text);
 
-    	return view('auth.register', compact('perro', 'my_phone'));
+    	// return view('auth.register', compact('perro', 'my_phone'));
+      return back();
     }
 
 

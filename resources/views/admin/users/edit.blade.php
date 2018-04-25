@@ -103,5 +103,40 @@
     </div>
 
 
+    <div class="col-md-4">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Регистрация телефона.<br>Поможет найти все Ваши вакансии</h3>
+        </div>
+        <div class="box-body">
+
+          <form method="POST" action="{{ url('sendsms') }}">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="mobil">Телефон</label>
+                <input type="text" class="form-control" id="mobil" name="mobil"
+                        value="{{ old('mobil') }}" placeholder="Введите номер без +7 и без 8">
+              </div>
+              <button type="submit" class="btn btn-default">Зопрос пароля</button>
+          </form>
+
+        </div>
+
+        <div class="box-body">
+
+          <form method="POST" action="{{ route('admin.users.permissions.update', $user) }}">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="exampleInputName2">СМС код</label>
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="Введите полученный код">
+              </div>
+              <button type="submit" class="btn btn-default">Регистрация телефона</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
   </div>
 @endsection
