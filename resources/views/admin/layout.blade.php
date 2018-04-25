@@ -71,7 +71,7 @@ desired effect
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
@@ -80,7 +80,7 @@ desired effect
           <!-- Messages: style can be found in dropdown.less-->
           {{-- <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
             </a>
@@ -90,7 +90,7 @@ desired effect
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
                   <li><!-- start message -->
-                    <a href="#">
+                    <a href="">
                       <div class="pull-left">
                         <!-- User Image -->
                         <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -108,7 +108,7 @@ desired effect
                 </ul>
                 <!-- /.menu -->
               </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
+              <li class="footer"><a href="">See All Messages</a></li>
             </ul>
           </li> --}}
           <!-- /.messages-menu -->
@@ -116,7 +116,7 @@ desired effect
           <!-- Notifications Menu -->
           {{-- <li class="dropdown notifications-menu">
             <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">10</span>
             </a>
@@ -126,20 +126,20 @@ desired effect
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
                   <li><!-- start notification -->
-                    <a href="#">
+                    <a href="">
                       <i class="fa fa-users text-aqua"></i> 5 new members joined today
                     </a>
                   </li>
                   <!-- end notification -->
                 </ul>
               </li>
-              <li class="footer"><a href="#">View all</a></li>
+              <li class="footer"><a href="">View all</a></li>
             </ul>
           </li> --}}
           <!-- Tasks Menu -->
           {{-- <li class="dropdown tasks-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">9</span>
             </a>
@@ -149,7 +149,7 @@ desired effect
                 <!-- Inner menu: contains the tasks -->
                 <ul class="menu">
                   <li><!-- Task item -->
-                    <a href="#">
+                    <a href="">
                       <!-- Task title and progress text -->
                       <h3>
                         Design some buttons
@@ -168,14 +168,14 @@ desired effect
                 </ul>
               </li>
               <li class="footer">
-                <a href="#">View all tasks</a>
+                <a href="">View all tasks</a>
               </li>
             </ul>
           </li> --}}
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
               {{-- <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image"> --}}
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
@@ -195,13 +195,13 @@ desired effect
               {{-- <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
+                    <a href="">Followers</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
+                    <a href="">Sales</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
+                    <a href="">Friends</a>
                   </div>
                 </div>
                 <!-- /.row -->
@@ -209,12 +209,12 @@ desired effect
               <!-- Menu Footer-->
               <li class="user-footer">
                 {{-- <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right"> --}}
                 <form method="POST" action="{{ route('logout') }}">
                   {{ csrf_field() }}
-                  <button href="#" class="btn btn-default btn-flat btn-block">Выход</button>
+                  <button href="" class="btn btn-default btn-flat btn-block">Выход</button>
                 </form>
 
                 {{-- </div> --}}
@@ -223,7 +223,7 @@ desired effect
           </li>
           <!-- Control Sidebar Toggle Button -->
           {{-- <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li> --}}
         </ul>
       </div>
@@ -243,12 +243,12 @@ desired effect
         <div class="pull-left info">
           <p>{{auth()->user()->name}}</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href=""><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
 
       <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
+      <form action="" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
@@ -297,7 +297,7 @@ desired effect
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="#">Millenium</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018 <a href="">Millenium</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

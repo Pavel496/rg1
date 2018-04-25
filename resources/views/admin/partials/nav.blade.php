@@ -8,7 +8,7 @@
   </li>
 
   <li class="treeview {{ setActiveRoute('admin.posts.index') }}">
-    <a href="#"><i class="fa fa-bars"></i> <span>Публикации</span>
+    <a href=""><i class="fa fa-bars"></i> <span>Публикации</span>
       <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
       </span>
@@ -22,7 +22,7 @@
           @if (request()->is('admin/posts/*'))
             <a href="{{ route('admin.posts.index', '#create') }}"><i class="fa fa-pencil"></i> Создать публикацию</a>
           @else
-            <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i> Создать публикацию</a>
+            <a href="" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i> Создать публикацию</a>
           @endif
         </li>
       @endcan
@@ -31,7 +31,7 @@
 
   @can('view', new App\User)
     <li class="treeview {{ setActiveRoute(['admin.users.index', 'admin.users.create']) }}">
-      <a href="#"><i class="fa fa-users"></i> <span>Пользователи</span>
+      <a href=""><i class="fa fa-users"></i> <span>Пользователи</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
@@ -49,7 +49,7 @@
     <li class="{{ setActiveRoute(['admin.users.show', 'admin.users.edit']) }}">
       <a href="{{ route('admin.users.show', auth()->user()) }}">
         <i class="fa fa-user"></i> <span>Профиль</span>
-        {{-- <a href="#" data-toggle="modal" data-target="#myModalsms"><i class="fa fa-comment"></i> Запрос кода</a> --}}
+        {{-- <a href="" data-toggle="modal" data-target="#myModalsms"><i class="fa fa-comment"></i> Запрос кода</a> --}}
       </a>
     </li>
 

@@ -7,7 +7,7 @@
     <meta name="description" content="Post a job position or create your online resume by TheJobs!">
     <meta name="keywords" content="">
 
-    <title>Rabota-gtn</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="/front/css/app.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
         <!-- Logo -->
         <div class="pull-left">
-          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+          <a class="navbar-toggle" href="" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
           <div class="logo-wrapper">
             <a class="logo" href="/"><img src="/front/img/logo.png" alt="logo"></a>
@@ -42,7 +42,7 @@
 
         <!-- User account -->
         <div class="pull-right user-login">
-          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Вход</a> или <a href="{{ route('register') }}">Регистрация по коду смс</a>
+          <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}">Вход</a> или <a href="{{ route('register') }}">Регистрация</a>
         </div>
         <!-- END User account -->
 
@@ -52,13 +52,13 @@
             <a class="active" href="/">Вакансии</a>
           </li>
           <li>
-            <a href="#">Резюме</a>
+            <a href="">Резюме</a>
           </li>
           <li>
-            <a href="#">Организации</a>
+            <a href="">Организации</a>
           </li>
           <li>
-            <a href="#">Полезное</a>
+            <a href="">Полезное</a>
           </li>
         </ul>
         <!-- END Navigation menu -->
@@ -75,7 +75,7 @@
           {{-- <img class="logo" src="/front/img/logo-google.jpg" alt=""> --}}
           <div class="hgroup">
             <h1>{{ $post->title }}</h1>
-            {{-- <h3><a href="#">Google</a></h3> --}}
+            {{-- <h3><a href="">Google</a></h3> --}}
             <span class="label label-success">{{ $post->category->name }}</span>
           </div>
           {{-- <time datetime="2016-03-03 20:00">2 days ago</time> --}}
@@ -107,15 +107,15 @@
           {{-- <div class="button-group">
             <ul class="social-icons">
               <li class="title">Share on</li>
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="facebook" href=""><i class="fa fa-facebook"></i></a></li>
+              <li><a class="google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
+              <li><a class="twitter" href=""><i class="fa fa-twitter"></i></a></li>
+              <li><a class="linkedin" href=""><i class="fa fa-linkedin"></i></a></li>
             </ul>
 
             <div class="action-buttons">
-              <a class="btn btn-primary" href="#">Apply with linkedin</a>
-              <a class="btn btn-success" href="#">Apply now</a>
+              <a class="btn btn-primary" href="">Apply with linkedin</a>
+              <a class="btn btn-success" href="">Apply now</a>
             </div>
           </div> --}}
 
@@ -130,8 +130,8 @@
       <!-- Job detail -->
       <section>
         <div class="container">
-
-          <p>Google is and always will be an engineering company. We hire people with a broad set of technical skills who are ready to tackle some of technology's greatest challenges and make an impact on millions, if not billions, of users. At Google, engineers not only revolutionize search, they routinely work on massive scalability and storage solutions, large-scale applications and entirely new platforms for developers around the world. From AdWords to Chrome, Android to YouTube, Social to Local, Google engineers are changing the world one technological achievement after another.</p>
+          <p class="lead">{{ $post->body }}</p>
+          {{-- <p>Google is and always will be an engineering company. We hire people with a broad set of technical skills who are ready to tackle some of technology's greatest challenges and make an impact on millions, if not billions, of users. At Google, engineers not only revolutionize search, they routinely work on massive scalability and storage solutions, large-scale applications and entirely new platforms for developers around the world. From AdWords to Chrome, Android to YouTube, Social to Local, Google engineers are changing the world one technological achievement after another.</p>
 
           <br>
           <h4>Обязанности</h4>
@@ -161,7 +161,7 @@
             <li>Development experience designing object-oriented JavaScript.</li>
             <li>Experience with user interface frameworks such as XUL, Flex and XAML.</li>
             <li>Knowledge of user interface design.</li>
-          </ul>
+          </ul> --}}
 
         </div>
       </section>
@@ -208,7 +208,7 @@
 
 
     <!-- Back to top button -->
-    <a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
+    <a id="scroll-up" href=""><i class="ti-angle-up"></i></a>
     <!-- END Back to top button -->
 
     <!-- Scripts -->

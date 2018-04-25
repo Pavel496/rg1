@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    {{-- <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Роли</h3>
@@ -80,9 +80,9 @@
           @endforelse
         </div>
       </div>
-    </div>
+    </div> --}}
 
-    <div class="col-md-3">
+    {{-- <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Дополнительные разрешения</h3>
@@ -99,10 +99,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <div class="row">
-    <div class="col-md-4 col-md-offset-8">
+    <div class="col-md-4">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Найдите Ваши вакансии в нашей базе</h3>

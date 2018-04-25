@@ -30,7 +30,7 @@
 
         <!-- Logo -->
         <div class="pull-left">
-          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+          <a class="navbar-toggle" href="" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
           <div class="logo-wrapper">
             <a class="logo" href="/"><img src="/front/img/logo.png" alt="logo"></a>
@@ -52,13 +52,13 @@
             <a class="active" href="/">Вакансии</a>
           </li>
           <li>
-            <a href="#">Резюме</a>
+            <a href="">Резюме</a>
           </li>
           <li>
-            <a href="#">Организации</a>
+            <a href="">Организации</a>
           </li>
           <li>
-            <a href="#">Полезное</a>
+            <a href="">Полезное</a>
           </li>
         </ul>
         <!-- END Navigation menu -->
@@ -110,7 +110,7 @@
             {{-- <!-- Job item -->
             @foreach($vacancies as $vacancy)
             <div class="col-xs-12">
-              <a class="item-block" href="#">
+              <a class="item-block" href="">
                 <header> --}}
 <!--                  <img src="/img/logo.png" alt="">-->
                   {{-- <div class="hgroup">
@@ -203,16 +203,16 @@
             @endif --}}
             {{-- <ul class="pagination">
               <li>
-                <a href="#" aria-label="Previous">
+                <a href="" aria-label="Previous">
                   <i class="ti-angle-left"></i>
                 </a>
               </li>
-              <li><a href="#">1</a></li>
-              <li class="active"><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
+              <li><a href="">1</a></li>
+              <li class="active"><a href="">2</a></li>
+              <li><a href="">3</a></li>
+              <li><a href="">4</a></li>
               <li>
-                <a href="#" aria-label="Next">
+                <a href="" aria-label="Next">
                   <i class="ti-angle-right"></i>
                 </a>
               </li>
@@ -362,7 +362,7 @@
     <!-- END Site footer -->
 
     <!-- Back to top button -->
-    <a id="scroll-up" href="#"><i class="ti-angle-up"></i></a>
+    <a id="scroll-up" href=""><i class="ti-angle-up"></i></a>
     <!-- END Back to top button -->
 
     <!-- Scripts -->
