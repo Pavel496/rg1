@@ -9,6 +9,8 @@ Route::get('/', 'PagesController@home')->name('pages.home');
 
 Route::get("my-search","SearchController@mySearch");
 Route::post("sendsms","SearchController@sendsms");
+Route::post("getvacancies","SearchController@getvacancies");
+
 
 Route::get('baza/{post}', 'PostsController@show')->name('posts.show');
 Route::get('bazahid/{hid}', 'PostsController@showhid');

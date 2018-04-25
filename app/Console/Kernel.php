@@ -70,7 +70,7 @@ class Kernel extends ConsoleKernel
           $posts = Post::all();
           foreach ($posts as $post) {
               $havephone = Phone::where('phone', $post->phone)->first();
-               if (! $havephone) {
+               if ((! $havephone) && (strlen($post->phone)==11)) {
                  $phone = [];
                  $phone = array_add($phone, 'phone', $post->phone);
                  $phone = array_add($phone, 'registered_at', now());
@@ -86,7 +86,7 @@ class Kernel extends ConsoleKernel
                  break;
               }
           }
-      })->everyMinute();
+      })->everyFifteenMinutes();
 // everyFifteenMinutes();
     }
 

@@ -46,8 +46,8 @@
             </a>
             <br>
             <small class="text-muted">Дата публикации {{ optional($post->published_at)->format('M d') }}</small>
-{{-- $post->published_at->format('d/m/Y')             --}}
-            <p class="text-muted">{{ $post->excerpt }}</p>
+            {{-- $post->published_at->format('d/m/Y')             --}}
+            {{-- <p class="text-muted">{{ $post->excerpt }}</p> --}}
             @unless ($loop->last)
               <hr>
             @endunless
@@ -100,4 +100,38 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-8">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Найдите Ваши вакансии в нашей базе</h3>
+        </div>
+        <div class="box-body">
+          <form method="POST" action="{{ url('sendsms') }}">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="mobil">Телефон вакансии</label>
+                <input type="text" class="form-control" id="mobil" name="mobil"
+                        placeholder="Введите номер мобильного без +7 и без 8">
+              </div>
+              <button type="submit" class="btn btn-default">Запрос пароля</button>
+          </form>
+        </div>
+
+        <div class="box-body">
+          <form method="POST" action="{{ url('getvacancies') }}">
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label for="code">СМС код</label>
+                <input type="text" class="form-control" id="code" name="code"
+                placeholder="Введите полученный код">
+              </div>
+              <button type="submit" class="btn btn-default">Идентификация вакансий</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 @endsection
