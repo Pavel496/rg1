@@ -6,6 +6,16 @@
 
 Route::get('/', 'PagesController@home')->name('pages.home');
 // ->middleware('throttle:3')
+Route::get('/resumes', function(){
+  return view('resumes');
+});
+Route::get('/companies', function(){
+  return view('companies');
+});
+Route::get('/useful', function(){
+  return view('useful');
+});
+
 
 Route::get("my-search","SearchController@mySearch");
 Route::post("sendsms","SearchController@sendsms");
