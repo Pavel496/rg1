@@ -7,7 +7,7 @@
     <meta name="description" content="Post a job position or create your online resume by TheJobs!">
     <meta name="keywords" content="">
 
-    <title>Rabota-gtn</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="/front/css/app.min.css" rel="stylesheet">
@@ -33,8 +33,8 @@
           <a class="navbar-toggle" href="" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
           <div class="logo-wrapper">
-            <a class="logo" href="/"><img src="/front/img/logo.png" alt="logo"></a>
-            <a class="logo-alt" href="/"><img src="/front/img/logo.png" alt="logo-alt"></a>
+            <a class="logo" href="/"><img src="/front/img/gtn.png" alt="logo"></a>
+            <a class="logo-alt" href="/"><img src="/front/img/gtn.png" alt="logo-alt"></a>
           </div>
 
         </div>

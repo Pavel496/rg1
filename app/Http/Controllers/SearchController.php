@@ -24,17 +24,20 @@ class SearchController extends Controller
 
     public function sendsms(Request $request)
     {
-      $my_phone = $request->input('mobil');
-      $havephone = Phone::where('phone', '8' . $my_phone)->first();
+      $tel = $request->input('mobil');
+      $tel = preg_replace("|\D+|", "", $tel);
+      $tel = preg_replace("|^7|", "8", $tel);
+// dd($tel);
+      $havephone = Phone::where('phone', $tel)->first();
       if ( $havephone ) {
         $message = 'Ваши вакансии обнаружены. Вам отправлена СМС с кодом';
         include('sendsms.php');
         // $my_phone = $request->mobil;
         $perro = str_random(5);
         Phone::where('phone', $havephone->phone)->update(['sval1' => $perro]);
-        $phone8 = '8' . $my_phone;
+        // $phone8 = '8' . $my_phone;
         $text = 'Ваш код: ' . $perro;
-        $myresult = sendsms($phone8, $text);
+        // $myresult = sendsms($tel, $text);
       } else {
         $message = 'Ваших вакансий базе нет';
       }

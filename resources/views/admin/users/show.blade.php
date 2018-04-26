@@ -113,7 +113,7 @@
               <div class="form-group">
                 <label for="mobil">Телефон</label>
                 <input type="text" class="form-control" id="mobil" name="mobil"
-                        placeholder="Введите номер мобильного без +7 и без 8">
+                        placeholder="Введите номер мобильного телефона">
               </div>
               <button type="submit" class="btn btn-default">Запрос пароля</button>
           </form>
