@@ -6,7 +6,7 @@
   <div class="container page-name">
     {{-- <h1 class="text-center">Внимание! Сайт работает в режиме отладки</h1> --}}
     <h1 class="text-center">Более 1000 активных вакансий у нас на сайте!</h1>
-    <p class="lead text-center">Каждый день более 30 новых вакансий</p>
+    <p class="lead text-center">Каждый день более 30 новых вакансий Гатчины и района</p>
 
     <div class="row">
       <div class="col-md-12 col-md-offset-2">
