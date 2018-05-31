@@ -47,7 +47,7 @@
 
         <li>
           {{-- <i class="fa fa-map-marker"></i> --}}
-          <span style="font-size:x-large; color:navy;">{{ $post->category->name }}</span>
+          <span style="font-size:x-large; color:#555;">{{ $post->category->name }}</span>
           {{-- <span class="label label-success">{{ $post->category->name }}</span> --}}
         </li>
       </ul>
