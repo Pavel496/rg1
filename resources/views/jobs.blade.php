@@ -99,11 +99,19 @@
                   <span>{{ $post->phone }}</span>
                 </li>
 
-                <li>
-                  <i class="fa fa-envelope"></i>
-                  <span>{{ $post->email }}</span>
-                </li>
 
+                @if (filter_var($post->email, FILTER_VALIDATE_EMAIL))
+                  <li>
+                    <i class="fa fa-envelope"></i>
+                    <span>{{ $post->email }}</span>
+                  </li>
+                @else
+                  <li>
+                    <i class="fa fa-envelope"></i>
+                    <span></span>
+                  </li>
+                @endif
+                
                 {{-- <li>
                   <i class="fa fa-money"></i>
                   <span>{{ $post->salary }}</span>
