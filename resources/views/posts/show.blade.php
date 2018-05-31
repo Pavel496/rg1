@@ -9,7 +9,7 @@
       <div class="hgroup">
         <h1>{{ $post->title }}</h1>
         {{-- <h3><a href="">Google</a></h3> --}}
-        <span class="label label-success">{{ $post->category->name }}</span>
+        {{-- <span class="label label-success">{{ $post->category->name }}</span> --}}
       </div>
       {{-- <time datetime="2016-03-03 20:00">2 days ago</time> --}}
       <hr>
@@ -18,13 +18,27 @@
       <ul class="details cols-3">
         <li>
           <i class="fa fa-phone"></i>
-          <span>{{ $post->phone }}</span>
+          <span style="font-size:large; color:#555;">{{ $post->phone }}</span>
         </li>
 
-        <li>
+
+        @if (filter_var($post->email, FILTER_VALIDATE_EMAIL))
+          <li>
+            <i class="fa fa-envelope"></i>
+            <span>{{ $post->email }}</span>
+          </li>
+        @else
+          <li>
+            <i class="fa fa-envelope"></i>
+            <span>нет почты</span>
+          </li>
+        @endif
+
+
+        {{-- <li>
           <i class="fa fa-envelope"></i>
-          <span>{{ $post->email }}</span>
-        </li>
+          <span style="font-size:large; color:#555;">{{ $post->email }}</span>
+        </li> --}}
 
         {{-- <li>
           <i class="fa fa-money"></i>
@@ -32,8 +46,9 @@
         </li> --}}
 
         <li>
-          <i class="fa fa-map-marker"></i>
-          <span>{{ $post->address }}</span>
+          {{-- <i class="fa fa-map-marker"></i> --}}
+          <span style="font-size:x-large; color:navy;">{{ $post->category->name }}</span>
+          {{-- <span class="label label-success">{{ $post->category->name }}</span> --}}
         </li>
       </ul>
 

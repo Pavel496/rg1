@@ -84,7 +84,7 @@
                 {{-- <h5>Millenial <span class="label label-success">{{ $post->category->name }}</span></h5> --}}
                 <span class="label label-success">{{ $post->category->name }}</span>
               </div>
-              <time>{{ optional($post->published_at)->format('d M Y') }}</time>
+              <time>{{ optional($post->updated_at)->format('d M Y') }}</time>
             </header>
 
             <div class="item-body">
@@ -108,10 +108,10 @@
                 @else
                   <li>
                     <i class="fa fa-envelope"></i>
-                    <span></span>
+                    <span>нет почты</span>
                   </li>
                 @endif
-                
+
                 {{-- <li>
                   <i class="fa fa-money"></i>
                   <span>{{ $post->salary }}</span>
