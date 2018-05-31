@@ -84,7 +84,7 @@
                 {{-- <h5>Millenial <span class="label label-success">{{ $post->category->name }}</span></h5> --}}
                 <span class="label label-success">{{ $post->category->name }}</span>
               </div>
-              <time>{{ optional($post->updated_at)->format('d M Y') }}</time>
+              <time>{{ optional($post->updated_at)->format('d M Y H:m') }}</time>
             </header>
 
             <div class="item-body">

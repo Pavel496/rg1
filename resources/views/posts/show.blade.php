@@ -11,6 +11,7 @@
         {{-- <h3><a href="">Google</a></h3> --}}
         {{-- <span class="label label-success">{{ $post->category->name }}</span> --}}
       </div>
+      <time>{{ optional($post->updated_at)->format('d M Y H:m') }}</time>
       {{-- <time datetime="2016-03-03 20:00">2 days ago</time> --}}
       <hr>
       <p class="lead">{{ $post->excerpt }}</p>
