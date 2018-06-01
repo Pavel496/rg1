@@ -1,11 +1,11 @@
 <ul class="sidebar-menu">
   <li class="header">МЕНЮ</li>
   <!-- Optionally, you can add icons to the links -->
-  <li class="{{ setActiveRoute('dashboard') }}">
+  {{-- <li class="{{ setActiveRoute('dashboard') }}">
     <a href="{{ route('dashboard') }}">
       <i class="fa fa-home"></i> <span>Виджеты</span>
     </a>
-  </li>
+  </li> --}}
 
   <li class="treeview {{ setActiveRoute('admin.posts.index') }}">
     <a href=""><i class="fa fa-bars"></i> <span>Публикации</span>

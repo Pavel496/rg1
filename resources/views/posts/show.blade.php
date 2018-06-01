@@ -9,7 +9,7 @@
       <div class="hgroup">
         <h1>{{ $post->title }}</h1>
         {{-- <h3><a href="">Google</a></h3> --}}
-        {{-- <span class="label label-success">{{ $post->category->name }}</span> --}}
+        <span class="label label-success">{{ $post->category->name }}</span>
       </div>
       <time>{{ optional($post->updated_at)->format('d M Y H:m') }}</time>
       {{-- <time datetime="2016-03-03 20:00">2 days ago</time> --}}
@@ -47,10 +47,16 @@
         </li> --}}
 
         <li>
-          {{-- <i class="fa fa-map-marker"></i> --}}
-          <span style="font-size:x-large; color:#555;">{{ $post->category->name }}</span>
-          {{-- <span class="label label-success">{{ $post->category->name }}</span> --}}
+          <i class="fa fa-map-marker"></i>
+          <span>{{ $post->address }}</span>
         </li>
+
+
+        {{-- <li> --}}
+          {{-- <i class="fa fa-map-marker"></i> --}}
+          {{-- <span style="font-size:x-large; color:#555;">{{ $post->category->name }}</span> --}}
+          {{-- <span class="label label-success">{{ $post->category->name }}</span> --}}
+        {{-- </li> --}}
       </ul>
 
       {{-- <div class="button-group">
@@ -69,6 +75,7 @@
       </div> --}}
 
     </div>
+    @include('posts.tags')
   </div>
 </header>
 <!-- END Page header -->
