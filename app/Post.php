@@ -110,8 +110,8 @@ class Post extends Model
 
         public static function create(array $attributes = [])
         {
-          $attributes['user_id'] = 1;
-          // auth()->id();
+          // $attributes['user_id'] = 1;
+          $attributes['user_id'] = auth()->id();
 
           $post = static::query()->create($attributes);
 
